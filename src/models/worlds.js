@@ -1,3 +1,5 @@
+var models = require('./index')
+
 var worlds = [
   'World01',
   'World02',
@@ -7,7 +9,7 @@ var worlds = [
 ]
 
 function generate () {
-  return worlds[Math.floor(Math.random() * worlds.length)]
+  return models.generate(worlds)
 }
 
 module.exports = {

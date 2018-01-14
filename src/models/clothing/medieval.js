@@ -1,3 +1,5 @@
+var models = require('../index')
+
 var nm1 = ["delicate","elegant","fancy","graceful","luxurious","relatively simple","majestic","modest","noble","ornate","rather simple","refined","stylish","traditional"];
 var nm2 = ["Queen Anne neckline","court neckline","cowl neckline","draped neckline","halter neckline","jewel neckline","keyhole neckline","round neckline","scoop neckline","semi-sweethear neckline","square neckline","sweetheart neckline","v-neck"];
 var nm3 = ["charmingly","daintily","delicately","elegantly","entrancingly","gracefully","graciously","harmoniously","lightly","subtly","tastefully","wonderfully"];
@@ -39,63 +41,63 @@ var nm38 = ["boots","shoes"];
 var nm39 = ["leather","hide","fur","leather","leather","cloth"];
 
 function generate (sex) {
-  if (!sex) { sex = Math.floor(Math.random() * 2) + 1 }
+  if (!sex) { sex = models.randomSex() }
 
   if (sex == 1) {
-    var rnd = parseInt(Math.floor(Math.random() * nm1.length));
-    var rnd2 = parseInt(Math.floor(Math.random() * nm2.length));
-    var rnd3 = parseInt(Math.floor(Math.random() * nm3.length));
-    var rnd1 = parseInt(Math.floor(Math.random() * nm1.length));
+    var rnd = models.generate(nm1)
+    var rnd2 = models.generate(nm2)
+    var rnd3 = models.generate(nm3)
+    var rnd1 = models.generate(nm1)
     while(rnd === rnd1) {
-      rnd1 = parseInt(Math.floor(Math.random() * nm1.length));
+      rnd1 = models.generate(nm1)
     }
-    var rnd4 = parseInt(Math.floor(Math.random() * nm4.length));
-    var rnd5 = parseInt(Math.floor(Math.random() * nm5.length));
-    var rnd6 = parseInt(Math.floor(Math.random() * nm6.length));
-    var rnd7 = parseInt(Math.floor(Math.random() * nm7.length));
-    var rnd8 = parseInt(Math.floor(Math.random() * nm8.length));
-    var rnd9 = parseInt(Math.floor(Math.random() * nm9.length));
-    var rnd10 = parseInt(Math.floor(Math.random() * nm10.length));
-    var rnd11 = parseInt(Math.floor(Math.random() * nm11.length));
-    var rnd12 = parseInt(Math.floor(Math.random() * nm12.length));
-    var rnd13 = parseInt(Math.floor(Math.random() * nm13.length));
-    var rnd14 = parseInt(Math.floor(Math.random() * nm14.length));
-    var rnd15 = parseInt(Math.floor(Math.random() * nm15.length));
-    var rnd16 = parseInt(Math.floor(Math.random() * nm16.length));
-    var rnd16b = parseInt(Math.floor(Math.random() * nm6.length));
-    var rnd17 = parseInt(Math.floor(Math.random() * nm17.length));
-    var rnd18 = parseInt(Math.floor(Math.random() * nm18.length));
+    var rnd4 = models.generate(nm4)
+    var rnd5 = models.generate(nm5)
+    var rnd6 = models.generate(nm6)
+    var rnd7 = models.generate(nm7)
+    var rnd8 = models.generate(nm8)
+    var rnd9 = models.generate(nm9)
+    var rnd10 = models.generate(nm10)
+    var rnd11 = models.generate(nm11)
+    var rnd12 = models.generate(nm12)
+    var rnd13 = models.generate(nm13)
+    var rnd14 = models.generate(nm14)
+    var rnd15 = models.generate(nm15)
+    var rnd16 = models.generate(nm16)
+    var rnd16b = models.generate(nm6)
+    var rnd17 = models.generate(nm17)
+    var rnd18 = models.generate(nm18)
 
-    var name = "Her " + nm1[rnd] + " dress flows from top to bottom and has a " + nm2[rnd2] + ", which " + nm3[rnd3] + " reveals the " + nm1[rnd1] + " dress worn below it. The " + nm4[rnd4] + ", " + nm5[rnd5] + " of her dress covers her stomach where the continuous flow is broken up by a " + nm6[rnd6] + " " + nm7[rnd7] + " worn " + nm8[rnd8] + " around her waist.";
-    var name2 = "Below the " + nm7[rnd7] + " the dress " + nm9[rnd9] + " the dress below. The front of the top dress " + nm10[rnd10] + ", the back continues to flow a " + nm11[rnd11] + " length behind her and ends in a " + nm12[rnd12] + ".";
-    var name3 = "Her sleeves are " + nm13[rnd13] + " and " + nm14[rnd14] + ", their flow is broken up " + nm15[rnd15] + " where " + nm16[rnd16] + "they're divided by " + nm6[rnd16b] + ", " + nm17[rnd17] + " bands, these are the same fabric and color used to outline the " + nm18[rnd18] + " of the dress."; 
+    var name = "Her " + rnd + " dress flows from top to bottom and has a " + rnd2 + ", which " + rnd3 + " reveals the " + rnd1 + " dress worn below it. The " + rnd4 + ", " + rnd5 + " of her dress covers her stomach where the continuous flow is broken up by a " + rnd6 + " " + rnd7 + " worn " + rnd8 + " around her waist."
+    var name2 = "Below the " + rnd7 + " the dress " + rnd9 + " the dress below. The front of the top dress " + rnd10 + ", the back continues to flow a " + rnd11 + " length behind her and ends in a " + rnd12 + "."
+    var name3 = "Her sleeves are " + rnd13 + " and " + rnd14 + ", their flow is broken up " + rnd15 + " where " + rnd16 + "they're divided by " + rnd16b + ", " + rnd17 + " bands, these are the same fabric and color used to outline the " + rnd18 + " of the dress." 
   } else {
-    var rnd19 = parseInt(Math.floor(Math.random() * nm19.length));
-    var rnd20 = parseInt(Math.floor(Math.random() * nm20.length));
-    var rnd21 = parseInt(Math.floor(Math.random() * nm21.length));
-    var rnd22 = parseInt(Math.floor(Math.random() * nm22.length));
-    var rnd23 = parseInt(Math.floor(Math.random() * nm23.length));
+    var rnd19 = models.generateId(nm19)
+    var rnd20 = models.generate(nm20)
+    var rnd21 = models.generate(nm21)
+    var rnd22 = models.generate(nm22)
+    var rnd23 = models.generate(nm23)
     if(rnd19  > 2){
-      rnd24 = " shirt ";
+      nm24 = " shirt "
     }
-    var rnd25 = parseInt(Math.floor(Math.random() * nm25.length));
-    var rnd26 = parseInt(Math.floor(Math.random() * nm26.length));
-    var rnd27 = parseInt(Math.floor(Math.random() * nm27.length));
-    var rnd28 = parseInt(Math.floor(Math.random() * nm28.length));
-    var rnd29 = parseInt(Math.floor(Math.random() * nm29.length));
-    var rnd30 = parseInt(Math.floor(Math.random() * nm30.length));
-    var rnd31 = parseInt(Math.floor(Math.random() * nm31.length));
-    var rnd32 = parseInt(Math.floor(Math.random() * nm32.length));
-    var rnd33 = parseInt(Math.floor(Math.random() * nm33.length));
-    var rnd34 = parseInt(Math.floor(Math.random() * nm25.length));
-    var rnd35 = parseInt(Math.floor(Math.random() * nm35.length));
-    var rnd36 = parseInt(Math.floor(Math.random() * nm36.length));
-    var rnd37 = parseInt(Math.floor(Math.random() * nm37.length));
-    var rnd38 = parseInt(Math.floor(Math.random() * nm38.length));
+    var rnd25 = models.generate(nm25)
+    var rnd26 = models.generate(nm26)
+    var rnd27 = models.generate(nm27)
+    var rnd28 = models.generate(nm28)
+    var rnd29 = models.generate(nm29)
+    var rnd30 = models.generate(nm30)
+    var rnd31 = models.generate(nm31)
+    var rnd32 = models.generate(nm32)
+    var rnd33 = models.generate(nm33)
+    var rnd34 = models.generate(nm25)
+    var rnd35 = models.generate(nm35)
+    var rnd36 = models.generate(nm36)
+    var rnd37 = models.generate(nm37)
+    var rnd38 = models.generate(nm38)
 
-    var name = "His " + nm19[rnd19] + " sleeved, " + nm20[rnd20] + " jacket covers him to " + nm21[rnd21] + " and is " + nm22[rnd22] + " " + nm23[rnd23] + ". The sleeves of his" + nm24 + "are " + nm25[rnd25] + " and reach down to " + nm26[rnd26] + ", they're decorated with " + nm27[rnd27] + ".";
-    var name2 = "The jacket has a " + nm28[rnd28] + " which reveals part of the " + nm29[rnd29] + " shirt worn below it and is worn with a " + nm30[rnd30] + " " + nm31[rnd31] + ", which is held together by " + nm32[rnd32] + ". The " + nm31[rnd31] + " is " + nm33[rnd33] + ".";
-    var name3 = "His pants are simple and " + nm25[rnd34] + " and reach down to his " + nm35[rnd35] + " " + nm38[rnd38] + ". The " + nm38[rnd38] + " are made from a " + nm36[rnd36] + " " + nm39[rnd35] + ", but are otherwise " + nm37[rnd37] + ".";
+    var name = "His " + nm19[rnd19] + " sleeved, " + rnd20 + " jacket covers him to " + rnd21 + " and is " + rnd22 + " " + rnd23 + ". The sleeves of his" + nm24 + "are " + rnd25 + " and reach down to " + rnd26 + ", they're decorated with " + rnd27 + "."
+    var name2 = "The jacket has a " + rnd28 + " which reveals part of the " + rnd29 + " shirt worn below it and is worn with a " + rnd30 + " " + rnd31 + ", which is held together by " + rnd32 + ". The " + rnd31 + " is " + rnd33 + "."
+    var name3 = "His pants are simple and " + rnd34 + " and reach down to his " + rnd35 + " " + rnd38 + ". The " + rnd38 + " are made from a " + rnd36 + " " + rnd35 + ", but are otherwise " + rnd37 + ".";
   }
 
   var element = ''
