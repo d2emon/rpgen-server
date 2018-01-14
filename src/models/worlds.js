@@ -1,12 +1,6 @@
 var models = require('./index')
 
-var worlds = [
-  'World01',
-  'World02',
-  'World03',
-  'World04',
-  'World05'
-]
+var worlds = require('../../data/worlds.json')
 
 function generate () {
   return models.generate(worlds)
