@@ -4,6 +4,13 @@ var worlds = require('../models/worlds')
 var names = require('../models/names/medieval')
 var clothing = require('../models/clothing/medieval')
 
+router.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  next()
+})
+
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index', { title: 'Express' })
