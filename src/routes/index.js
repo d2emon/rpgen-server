@@ -17,6 +17,13 @@ router.get('/', function(req, res) {
 })
 
 router.get('/worlds', function (req, res) {
+  var random = req.query.random
+  if (!random) {
+    res.send({
+      'worlds': worlds.worlds
+    })
+  }
+
   var count = req.query.count
   if (!count) { count = 1 }
 
