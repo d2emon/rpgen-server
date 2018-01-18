@@ -80,11 +80,13 @@ router.get('/characters', function (req, res) {
 
   var generated = []
   for (var i=0; i < count; i++) {
+    var charSex = sex
+    if (!sex) charSex = Math.floor(Math.random() * 2) + 1
     generated.push({
       'count': count,
-      'sex': sex,
-      'name': names.generate(sex),
-      'clothing': clothing.generate(sex),
+      'sex': charSex,
+      'name': names.generate(charSex),
+      'clothing': clothing.generate(charSex),
     })
   }
 
