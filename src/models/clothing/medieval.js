@@ -22,12 +22,12 @@ var nm16 = ["меняют цвет и ",""];
 var nm17 = require('../../../data/dress-sleeves-bands.json')
 var nm18 = require('../../../data/dress-outline.json')
 
-var nm19 = ["long","very long","fairly long","short","very short","fairly short"];
-var nm20 = ["leather","hide","furred","cloth","animal skin","silky","velvety"];
-var nm21 = ["just below his waist","well below his waist","just below his groin","well below his groin","just below his knees","well below his knees","just above his waist","well above his waist","just above his groin","well above his groin","just above his knees","well above his knees","his waist","his knees","his groin"];
-var nm22 = ["tightly tied with string","loosely tied with string","buttoned up completely","almost completely buttoned up","half buttoned up","barely tied with string","barely buttoned up","bound"];
-var nm23 = ["at the center","at the left side","at the right side","at the top left side","at the top right side","at the bottom left side","at the bottom right side","slightly off-center"];
-var nm24 = " jacket ";
+var nm19 = require('../../../data/jacket-sleeves-length.json')
+var nm20 = require('../../../data/jacket-material.json')
+var nm21 = require('../../../data/jacket-length.json')
+var nm22 = require('../../../data/jacket-tie.json')
+var nm23 = require('../../../data/jacket-tie-placement.json')
+// var nm24 = " куртки "
 var nm25 = ["incredibly wide","very wide","quite wide","wide","a little wide","narrow","quite narrow","a little narrow","a comfortable fit","a loose fit"];
 var nm26 = ["his hands","just above his hands","well below his hands","below his hands","well above his hands","his wrists","just below his wrists","just above his wrists","well above his wrists","well below his wrists"];
 var nm27 = ["a single thread lining from top to bottom","several thread linings from top to bottom","a single thread lining at the sleeve ends","several thread linings at the sleeve ends","a decorative band at the edges","a decorative band almost at the edges","a single thread lining and a decorative band"];
@@ -44,6 +44,7 @@ var nm38 = ["boots","shoes"];
 var nm39 = ["leather","hide","fur","leather","leather","cloth"];
 
 function generate (sex) {
+  var nm24 = " куртки "
   if (!sex) { sex = models.randomSex() }
 
   if (sex == 1) {
@@ -89,7 +90,7 @@ function generate (sex) {
     var rnd22 = models.generate(nm22)
     var rnd23 = models.generate(nm23)
     if(rnd19  > 2){
-      nm24 = " shirt "
+      nm24 = " рубахи "
     }
     var rnd25 = models.generate(nm25)
     var rnd26 = models.generate(nm26)
@@ -106,11 +107,17 @@ function generate (sex) {
     var rnd37 = models.generate(nm37)
     var rnd38 = models.generate(nm38)
 
-    var name = "His " + nm19[rnd19] + " sleeved, " + rnd20 + " jacket covers him to " + rnd21 + " and is " + rnd22 + " " + rnd23 + ". The sleeves of his" + nm24 + "are " + rnd25 + " and reach down to " + rnd26 + ", they're decorated with " + rnd27 + "."
-    var name2 = "The jacket has a " + rnd28 + " which reveals part of the " + rnd29 + " shirt worn below it and is worn with a " + rnd30 + " " + rnd31 + ", which is held together by " + rnd32 + ". The " + rnd31 + " is " + rnd33 + "."
-    var name3 = "His pants are simple and " + rnd34 + " and reach down to his " + rnd35 + " " + rnd38 + ". The " + rnd38 + " are made from a " + rnd36 + " " + rnd35 + ", but are otherwise " + rnd37 + ".";
+    rnd31b = rnd31[0].toUpperCase() + rnd31.substring(1)
+    rnd38 = rnd38[0].toUpperCase() + rnd38.substring(1)
 
-    var title = rnd + " suit"
+    var name = "На нем " + rnd20 + " куртка с " + nm19[rnd19] + " рукавами, которая заканчивается " + rnd21 + " и " + rnd22 + " " + rnd23 + ". "
+    name += "Рукава его" + nm24 + " " + rnd25 + " и достигают " + rnd26 + ", они украшены " + rnd27 + "."
+    var name2 = "У куртки " + rnd28 + " который показывает часть " + rnd29 + " рубахи, которую он носит под курткой с " + rnd30 + " " + rnd31 + ", скрепленным " + rnd32 + ". "
+    name2 += rnd31b + " " + rnd33 + "."
+    var name3 = "Его брюки простые и " + rnd34 + " и длиной до " + rnd35 + " " + rnd38 + ". "
+    name3 += rnd38 + " сделаны из " + rnd36 + " " + rnd35 + ", но в остальном это " + rnd37 + "."
+
+    var title = rnd20 + " куртка"
   }
 
   if (title) {
