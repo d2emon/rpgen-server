@@ -74,10 +74,13 @@ function generate (sex) {
 
     rnd4 = rnd4[0].toUpperCase() + rnd4.substring(1)
 
-    var name = "Она одета в " + rnd + " платье с " + rnd2 + ", который " + rnd3 + " открывает " + rnd1 + " нижнее платье. "
-    name += rnd4 + " " + rnd5 + " ее платья покрывает живот, где непрерывный поток платья прерывает " + rnd6 + " " + rnd7 + ", которая носится " + rnd8 + " на ее талии."
-    var name2 = "Below the " + rnd7 + " the dress " + rnd9 + " the dress below. The front of the top dress " + rnd10 + ", the back continues to flow a " + rnd11 + " length behind her and ends in a " + rnd12 + "."
+    var name = 'Она одета в ' + rnd + ' платье с ' + rnd2 + ', который ' + rnd3 + ' открывает ' + rnd1 + ' нижнее платье. '
+    name += rnd4 + ' ' + rnd5 + ' ее платья покрывает живот, где непрерывный поток платья прерывает ' + rnd6 + ' ' + rnd7 + ', которая носится ' + rnd8 + ' на ее талии.'
+    var name2 = "Below the " + rnd7 + " the dress " + rnd9 + " the dress below. "
+    name2 += "The front of the top dress " + rnd10 + ", the back continues to flow a " + rnd11 + " length behind her and ends in a " + rnd12 + "."
     var name3 = "Her sleeves are " + rnd13 + " and " + rnd14 + ", their flow is broken up " + rnd15 + " where " + rnd16 + "they're divided by " + rnd16b + ", " + rnd17 + " bands, these are the same fabric and color used to outline the " + rnd18 + " of the dress." 
+
+    var title = rnd + " платье"
   } else {
     var rnd19 = models.generateId(nm19)
     var rnd20 = models.generate(nm20)
@@ -105,13 +108,22 @@ function generate (sex) {
     var name = "His " + nm19[rnd19] + " sleeved, " + rnd20 + " jacket covers him to " + rnd21 + " and is " + rnd22 + " " + rnd23 + ". The sleeves of his" + nm24 + "are " + rnd25 + " and reach down to " + rnd26 + ", they're decorated with " + rnd27 + "."
     var name2 = "The jacket has a " + rnd28 + " which reveals part of the " + rnd29 + " shirt worn below it and is worn with a " + rnd30 + " " + rnd31 + ", which is held together by " + rnd32 + ". The " + rnd31 + " is " + rnd33 + "."
     var name3 = "His pants are simple and " + rnd34 + " and reach down to his " + rnd35 + " " + rnd38 + ". The " + rnd38 + " are made from a " + rnd36 + " " + rnd35 + ", but are otherwise " + rnd37 + ".";
+
+    var title = rnd + " suit"
+  }
+
+  if (title) {
+     title = title[0].toUpperCase() + title.substring(1)
   }
 
   var element = ''
   element += name + "\n"
   element += name2 + "\n"
   element += name3
-  return element
+  return {
+    title: title,
+    description: element
+  }
 }
 
 module.exports = {
