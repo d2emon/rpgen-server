@@ -15,12 +15,12 @@ var nm10 = require('../../../data/dress-front.json')
 var nm11 = require('../../../data/dress-back.json')
 var nm12 = require('../../../data/dress-end.json')
 
-var nm13 = ["very long","quite long","a little too long","purposely too long","incredibly long","the length of her arms","longer than her arms","slightly shorter than her arms","almost the length of her arms","fairly short","a little short"];
-var nm14 = ["incredibly wide","very wide","quite wide","wide","a little wide","narrow","quite narrow","a little narrow","a comfortable fit","a loose fit"];
-var nm15 = ["just below the shoulder","just below the elbow","just above the elbow","below the shoulder","below the elbow","above the elbow","well below the shoulder","well below the elbow","well above the elbow","at the elbow","at the shoulder"];
-var nm16 = ["they change color and where ",""];
-var nm17 = ["decorative","elegant","ornamental","cosmetic","embellishing","ornate","delicate","graceful","luxurious","simple","modest","refined","stylish"];
-var nm18 = ["edges","sleeves","sleeves and bottom","bottom","neckline","bottom and neckline","sleeves, bottom and neckline","sleeves and neckline"];
+var nm13 = require('../../../data/dress-sleeves-length.json')
+var nm14 = require('../../../data/dress-sleeves-width.json')
+var nm15 = require('../../../data/dress-sleeves-divide.json')
+var nm16 = ["меняют цвет и ",""];
+var nm17 = require('../../../data/dress-sleeves-bands.json')
+var nm18 = require('../../../data/dress-outline.json')
 
 var nm19 = ["long","very long","fairly long","short","very short","fairly short"];
 var nm20 = ["leather","hide","furred","cloth","animal skin","silky","velvety"];
@@ -79,7 +79,7 @@ function generate (sex) {
     name += rnd4 + ' ' + rnd5 + ' её платья покрывает живот, где непрерывный поток платья прерывается ' + rnd6 + ' ' + rnd7 + ', который она носит ' + rnd8 + ' на талии.'
     var name2 = "Под " + rnd7 + " платье " + rnd9 + " нижнее платье. "
     name2 += "Передний край верхнего платья " + rnd10 + ", а задний образует " + rnd11 + " шлейф и оканчивается " + rnd12 + "."
-    var name3 = "Её рукава " + rnd13 + " и " + rnd14 + ", они прерываются " + rnd15 + " где " + rnd16 + "они разделены " + rnd16b + ", " + rnd17 + " полосами, они из того же материала, что и оторочки " + rnd18 + " платья." 
+    var name3 = "Её рукава " + rnd13 + " и " + rnd14 + ", " + rnd15 + " они " + rnd16 + " отделаны " + rnd16b + ", " + rnd17 + " пояском из того же материала, что и отделка " + rnd18 + " платья." 
 
     var title = rnd + " платье"
   } else {
