@@ -6,9 +6,9 @@ var nm3 = require('../../../data/dress-reveal.json')
 
 var nm4 = require('../../../data/dress-fabric-type.json')
 var nm5 = require('../../../data/dress-stomach.json')
-var nm6 = ["thin","thick","simple","small","slender","light","dark","large","long","wide","small"];
-var nm7 = ["leather belt","ribbon","cloth belt","rope belt","cloth band"];
-var nm8 = ["fairly high","quite high","low","high","fairly low","quite low"];
+var nm6 = require('../../../data/dress-belt-type.json')
+var nm7 = require('../../../data/dress-belt.json')
+var nm8 = require('../../../data/dress-belt-position.json')
 
 var nm9 = ["opens up slightly and reveals","opens up to the right and reveals","opens up to the left and reveals","opens up and reveals","opens up wide and reveals","flows down and hides","opens up left and right and reveals","flows down wide and hides"];
 var nm10 = ["is shorter at the front and curves outwards","is much shorter at the front and curves outwards","is shorter at the front and flows straight down","reaches the ground generously","easily reaches the ground in the front","is longer than the bottom dress and flows straight down","is longer than the bottom dress and curves outwards","makes it just to the ground to cover her feet"];
@@ -75,7 +75,7 @@ function generate (sex) {
     rnd4 = rnd4[0].toUpperCase() + rnd4.substring(1)
 
     var name = 'Она одета в ' + rnd + ' платье с ' + rnd2 + ', который ' + rnd3 + ' открывает ' + rnd1 + ' нижнее платье. '
-    name += rnd4 + ' ' + rnd5 + ' ее платья покрывает живот, где непрерывный поток платья прерывает ' + rnd6 + ' ' + rnd7 + ', которая носится ' + rnd8 + ' на ее талии.'
+    name += rnd4 + ' ' + rnd5 + ' ее платья покрывает живот, где непрерывный поток платья прерывается ' + rnd6 + ' ' + rnd7 + ', который она носит ' + rnd8 + ' на талии.'
     var name2 = "Below the " + rnd7 + " the dress " + rnd9 + " the dress below. "
     name2 += "The front of the top dress " + rnd10 + ", the back continues to flow a " + rnd11 + " length behind her and ends in a " + rnd12 + "."
     var name3 = "Her sleeves are " + rnd13 + " and " + rnd14 + ", their flow is broken up " + rnd15 + " where " + rnd16 + "they're divided by " + rnd16b + ", " + rnd17 + " bands, these are the same fabric and color used to outline the " + rnd18 + " of the dress." 
