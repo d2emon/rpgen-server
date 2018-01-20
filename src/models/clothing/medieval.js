@@ -10,10 +10,11 @@ var nm6 = require('../../../data/dress-belt-type.json')
 var nm7 = require('../../../data/dress-belt.json')
 var nm8 = require('../../../data/dress-belt-position.json')
 
-var nm9 = ["opens up slightly and reveals","opens up to the right and reveals","opens up to the left and reveals","opens up and reveals","opens up wide and reveals","flows down and hides","opens up left and right and reveals","flows down wide and hides"];
-var nm10 = ["is shorter at the front and curves outwards","is much shorter at the front and curves outwards","is shorter at the front and flows straight down","reaches the ground generously","easily reaches the ground in the front","is longer than the bottom dress and flows straight down","is longer than the bottom dress and curves outwards","makes it just to the ground to cover her feet"];
-var nm11 = ["fair","large","good","short","decent","long","small"];
-var nm12 = ["broad curve","narrow curve","narrow tip","broad tip","narrow rectangle","broad rectangle"];
+var nm9 = require('../../../data/dress-open.json')
+var nm10 = require('../../../data/dress-front.json')
+var nm11 = require('../../../data/dress-back.json')
+var nm12 = require('../../../data/dress-end.json')
+
 var nm13 = ["very long","quite long","a little too long","purposely too long","incredibly long","the length of her arms","longer than her arms","slightly shorter than her arms","almost the length of her arms","fairly short","a little short"];
 var nm14 = ["incredibly wide","very wide","quite wide","wide","a little wide","narrow","quite narrow","a little narrow","a comfortable fit","a loose fit"];
 var nm15 = ["just below the shoulder","just below the elbow","just above the elbow","below the shoulder","below the elbow","above the elbow","well below the shoulder","well below the elbow","well above the elbow","at the elbow","at the shoulder"];
@@ -75,10 +76,10 @@ function generate (sex) {
     rnd4 = rnd4[0].toUpperCase() + rnd4.substring(1)
 
     var name = 'Она одета в ' + rnd + ' платье с ' + rnd2 + ', который ' + rnd3 + ' открывает ' + rnd1 + ' нижнее платье. '
-    name += rnd4 + ' ' + rnd5 + ' ее платья покрывает живот, где непрерывный поток платья прерывается ' + rnd6 + ' ' + rnd7 + ', который она носит ' + rnd8 + ' на талии.'
-    var name2 = "Below the " + rnd7 + " the dress " + rnd9 + " the dress below. "
-    name2 += "The front of the top dress " + rnd10 + ", the back continues to flow a " + rnd11 + " length behind her and ends in a " + rnd12 + "."
-    var name3 = "Her sleeves are " + rnd13 + " and " + rnd14 + ", their flow is broken up " + rnd15 + " where " + rnd16 + "they're divided by " + rnd16b + ", " + rnd17 + " bands, these are the same fabric and color used to outline the " + rnd18 + " of the dress." 
+    name += rnd4 + ' ' + rnd5 + ' её платья покрывает живот, где непрерывный поток платья прерывается ' + rnd6 + ' ' + rnd7 + ', который она носит ' + rnd8 + ' на талии.'
+    var name2 = "Под " + rnd7 + " платье " + rnd9 + " нижнее платье. "
+    name2 += "Передний край верхнего платья " + rnd10 + ", а задний образует " + rnd11 + " шлейф и оканчивается " + rnd12 + "."
+    var name3 = "Её рукава " + rnd13 + " и " + rnd14 + ", они прерываются " + rnd15 + " где " + rnd16 + "они разделены " + rnd16b + ", " + rnd17 + " полосами, они из того же материала, что и оторочки " + rnd18 + " платья." 
 
     var title = rnd + " платье"
   } else {
