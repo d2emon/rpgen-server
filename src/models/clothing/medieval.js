@@ -1,13 +1,15 @@
 var models = require('../index')
 
-var nm1 = ["delicate","elegant","fancy","graceful","luxurious","relatively simple","majestic","modest","noble","ornate","rather simple","refined","stylish","traditional"];
-var nm2 = ["Queen Anne neckline","court neckline","cowl neckline","draped neckline","halter neckline","jewel neckline","keyhole neckline","round neckline","scoop neckline","semi-sweethear neckline","square neckline","sweetheart neckline","v-neck"];
-var nm3 = ["charmingly","daintily","delicately","elegantly","entrancingly","gracefully","graciously","harmoniously","lightly","subtly","tastefully","wonderfully"];
-var nm4 = ["comfortable","delectable","delicate","exquisite","fine","flowing","gentle","ornate","satiny","silky","smooth","soft","velvety"];
-var nm5 = ["buttoned up fabric","loosely tied fabric","tightly tied fabric","corset-like tied fabric","corset"];
+var nm1 = require('../../../data/dress-short.json')
+var nm2 = require('../../../data/necklines.json')
+var nm3 = require('../../../data/dress-reveal.json')
+
+var nm4 = require('../../../data/dress-fabric-type.json')
+var nm5 = require('../../../data/dress-stomach.json')
 var nm6 = ["thin","thick","simple","small","slender","light","dark","large","long","wide","small"];
 var nm7 = ["leather belt","ribbon","cloth belt","rope belt","cloth band"];
 var nm8 = ["fairly high","quite high","low","high","fairly low","quite low"];
+
 var nm9 = ["opens up slightly and reveals","opens up to the right and reveals","opens up to the left and reveals","opens up and reveals","opens up wide and reveals","flows down and hides","opens up left and right and reveals","flows down wide and hides"];
 var nm10 = ["is shorter at the front and curves outwards","is much shorter at the front and curves outwards","is shorter at the front and flows straight down","reaches the ground generously","easily reaches the ground in the front","is longer than the bottom dress and flows straight down","is longer than the bottom dress and curves outwards","makes it just to the ground to cover her feet"];
 var nm11 = ["fair","large","good","short","decent","long","small"];
@@ -51,11 +53,13 @@ function generate (sex) {
     while(rnd === rnd1) {
       rnd1 = models.generate(nm1)
     }
+
     var rnd4 = models.generate(nm4)
     var rnd5 = models.generate(nm5)
     var rnd6 = models.generate(nm6)
     var rnd7 = models.generate(nm7)
     var rnd8 = models.generate(nm8)
+
     var rnd9 = models.generate(nm9)
     var rnd10 = models.generate(nm10)
     var rnd11 = models.generate(nm11)
@@ -68,7 +72,10 @@ function generate (sex) {
     var rnd17 = models.generate(nm17)
     var rnd18 = models.generate(nm18)
 
-    var name = "Her " + rnd + " dress flows from top to bottom and has a " + rnd2 + ", which " + rnd3 + " reveals the " + rnd1 + " dress worn below it. The " + rnd4 + ", " + rnd5 + " of her dress covers her stomach where the continuous flow is broken up by a " + rnd6 + " " + rnd7 + " worn " + rnd8 + " around her waist."
+    rnd4 = rnd4[0].toUpperCase() + rnd4.substring(1)
+
+    var name = "Она одета в " + rnd + " платье с " + rnd2 + ", который " + rnd3 + " открывает " + rnd1 + " нижнее платье. "
+    name += rnd4 + " " + rnd5 + " ее платья покрывает живот, где непрерывный поток платья прерывает " + rnd6 + " " + rnd7 + ", которая носится " + rnd8 + " на ее талии."
     var name2 = "Below the " + rnd7 + " the dress " + rnd9 + " the dress below. The front of the top dress " + rnd10 + ", the back continues to flow a " + rnd11 + " length behind her and ends in a " + rnd12 + "."
     var name3 = "Her sleeves are " + rnd13 + " and " + rnd14 + ", their flow is broken up " + rnd15 + " where " + rnd16 + "they're divided by " + rnd16b + ", " + rnd17 + " bands, these are the same fabric and color used to outline the " + rnd18 + " of the dress." 
   } else {
@@ -101,10 +108,8 @@ function generate (sex) {
   }
 
   var element = ''
-  element += name
-  element += "\n\n"
-  element += name2
-  element += "\n\n"
+  element += name + "\n"
+  element += name2 + "\n"
   element += name3
   return element
 }
