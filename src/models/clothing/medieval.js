@@ -28,9 +28,9 @@ var nm21 = require('../../../data/jacket-length.json')
 var nm22 = require('../../../data/jacket-tie.json')
 var nm23 = require('../../../data/jacket-tie-placement.json')
 // var nm24 = " куртки "
-var nm25 = ["incredibly wide","very wide","quite wide","wide","a little wide","narrow","quite narrow","a little narrow","a comfortable fit","a loose fit"];
-var nm26 = ["his hands","just above his hands","well below his hands","below his hands","well above his hands","his wrists","just below his wrists","just above his wrists","well above his wrists","well below his wrists"];
-var nm27 = ["a single thread lining from top to bottom","several thread linings from top to bottom","a single thread lining at the sleeve ends","several thread linings at the sleeve ends","a decorative band at the edges","a decorative band almost at the edges","a single thread lining and a decorative band"];
+var nm25 = require('../../../data/shirt-sleeves-width.json')
+var nm26 = require('../../../data/shirt-sleeves-length.json')
+var nm27 = require('../../../data/shirt-sleeves-decoration.json')
 var nm28 = ["round neckline","wide, round neckline","narrow, round neckline","deep, round neckline","wide v-neck","narrow v-neck","deep v-neck","rectangular neckline","wide, rectangular neckline","narrow, rectangular neckline","deep, rectangular neckline"];
 var nm29 = ["rough","elegant","fancy","graceful","luxurious","relatively simple","majestic","modest","noble","ornate","rather simple","refined","stylish","traditional"];
 var nm30 = ["thin","thick","simple","small","big","light","dark","large","long","wide","small"];
@@ -111,7 +111,7 @@ function generate (sex) {
     rnd38 = rnd38[0].toUpperCase() + rnd38.substring(1)
 
     var name = "На нем " + rnd20 + " куртка с " + nm19[rnd19] + " рукавами, которая заканчивается " + rnd21 + " и " + rnd22 + " " + rnd23 + ". "
-    name += "Рукава его" + nm24 + " " + rnd25 + " и достигают " + rnd26 + ", они украшены " + rnd27 + "."
+    name += "Рукава его" + nm24 + " " + rnd25 + " и " + rnd26 + ", они украшены " + rnd27 + "."
     var name2 = "У куртки " + rnd28 + " который показывает часть " + rnd29 + " рубахи, которую он носит под курткой с " + rnd30 + " " + rnd31 + ", скрепленным " + rnd32 + ". "
     name2 += rnd31b + " " + rnd33 + "."
     var name3 = "Его брюки простые и " + rnd34 + " и длиной до " + rnd35 + " " + rnd38 + ". "
