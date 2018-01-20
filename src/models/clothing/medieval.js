@@ -37,11 +37,11 @@ var nm30 = require('../../../data/shirt-belt-type.json')
 var nm31 = require('../../../data/shirt-belt.json')
 var nm32 = require('../../../data/shirt-belt-lock.json')
 var nm33 = require('../../../data/shirt-belt-function.json')
-var nm35 = ["leather","hide","furred","soft leather","hard leather","bound cloth"];
-var nm36 = ["rare","very rare","fairly rare","fairly uncommon","very uncommon","pretty uncommon","pretty rare","pretty unusual","pretty unique"];
-var nm37 = ["quite simple","a simple design","an ordinary design","a common design","a common type","not that special","a design found commonly","not any different from others"];
-var nm38 = ["boots","shoes"];
-var nm39 = ["leather","hide","fur","leather","leather","cloth"];
+var nm35 = require('../../../data/pants-type.json')
+var nm36 = require('../../../data/shoes-rarity.json')
+var nm37 = require('../../../data/shoes-description.json')
+var nm38 = require('../../../data/shoes.json')
+// var nm39 = ["leather","hide","fur","leather","leather","cloth"];
 
 function generate (sex) {
   var nm24 = " куртки "
@@ -108,15 +108,15 @@ function generate (sex) {
     var rnd38 = models.generate(nm38)
 
     rnd31b = rnd31[0].toUpperCase() + rnd31.substring(1)
-    rnd38 = rnd38[0].toUpperCase() + rnd38.substring(1)
+    rnd38b = rnd38[0].toUpperCase() + rnd38.substring(1)
 
     var name = "На нем " + rnd20 + " куртка с " + nm19[rnd19] + " рукавами, которая заканчивается " + rnd21 + " и " + rnd22 + " " + rnd23 + ". "
     name += "Рукава его" + nm24 + " " + rnd25 + " и " + rnd26 + ", они украшены " + rnd27 + "."
     var name2 = "У куртки " + rnd28 + " через который видна " + rnd29 + " рубаха, которую он носит под курткой. "
     name2 += "Вместе с рубахой он носит " + rnd30 + " " + rnd31 + ", скрепленный " + rnd32 + ". "
     name2 += rnd31b + " " + rnd33 + "."
-    var name3 = "Его брюки простые и " + rnd34 + " и длиной до " + rnd35 + " " + rnd38 + ". "
-    name3 += rnd38 + " сделаны из " + rnd36 + " " + rnd35 + ", но в остальном это " + rnd37 + "."
+    var name3 = "Его простые и " + rnd34 + " брюки переходят в " + rnd38 + " из " + rnd35 + ". "
+    name3 += rnd38b + " сделаны из " + rnd36 + " " + rnd35 + ", но в остальном они " + rnd37 + "."
 
     var title = rnd20 + " куртка"
   }
