@@ -43,96 +43,214 @@ var nm37 = require('../../../data/shoes-description.json')
 var nm38 = require('../../../data/shoes.json')
 // var nm39 = ["leather","hide","fur","leather","leather","cloth"];
 
+function lowercase(title) {
+  if (! title) {
+    return ''
+  }
+  return title[0].toLowerCase() + title.substring(1)
+}
+
+function uppercase(title) {
+  if (! title) {
+    return ''
+  }
+  return title[0].toUpperCase() + title.substring(1)
+}
+
+function generateDress() {
+  var rnd = models.generate(nm1)
+  var rnd2 = models.generate(nm2)
+  var rnd3 = models.generate(nm3)
+  var rnd1 = models.generate(nm1)
+  while(rnd === rnd1) {
+    rnd1 = models.generate(nm1)
+  }
+
+  var rnd4 = models.generate(nm4)
+  var rnd5 = models.generate(nm5)
+  var rnd6 = models.generate(nm6)
+  var rnd7 = models.generate(nm7)
+  var rnd8 = models.generate(nm8)
+
+  var rnd9 = models.generate(nm9)
+  var rnd10 = models.generate(nm10)
+  var rnd11 = models.generate(nm11)
+  var rnd12 = models.generate(nm12)
+  var rnd13 = models.generate(nm13)
+  var rnd14 = models.generate(nm14)
+  var rnd15 = models.generate(nm15)
+  var rnd16 = models.generate(nm16)
+  var rnd16b = models.generate(nm6)
+  var rnd17 = models.generate(nm17)
+  var rnd18 = models.generate(nm18)
+
+  rnd4 = rnd4[0].toUpperCase() + rnd4.substring(1)
+
+  var description = 'Она одета в ' + rnd + ' платье с ' + rnd2 + ', который ' + rnd3 + ' открывает ' + rnd1 + ' нижнее платье. '
+  description += rnd4 + ' ' + rnd5 + ' её платья покрывает живот, где непрерывный поток платья прерывается ' + rnd6 + ' ' + rnd7 + ', который она носит ' + rnd8 + ' на талии.'
+  description += "\n"
+  description += "Под " + rnd7 + " платье " + rnd9 + " нижнее платье. "
+  description += "Передний край верхнего платья " + rnd10 + ", а задний образует " + rnd11 + " шлейф и оканчивается " + rnd12 + "."
+  description += "\n"
+  description += "Её рукава " + rnd13 + " и " + rnd14 + ", " + rnd15 + " они " + rnd16 + " отделаны " + rnd16b + ", " + rnd17 + " пояском из того же материала, что и отделка " + rnd18 + " платья." 
+
+  var title = rnd + " платье"
+  if (title) {
+    title = title[0].toUpperCase() + title.substring(1)
+  }
+
+  return {
+    title: title,
+    description: description
+  }
+}
+
+function generateJacket() {
+  var hasSleeves = true
+  var rnd19 = models.generateId(nm19)
+  var rnd20 = models.generate(nm20)
+  var rnd21 = models.generate(nm21)
+  var rnd22 = models.generate(nm22)
+  var rnd23 = models.generate(nm23)
+  if(rnd19  > 2){
+    hasSleeves = false
+  }
+  var rnd25 = models.generate(nm25)
+  var rnd26 = models.generate(nm26)
+  var rnd27 = models.generate(nm27)
+  var rnd28 = models.generate(nm28)
+
+  var title = uppercase(rnd20) + " куртка"
+  var description = "На нем " + lowercase(title) + " с " + nm19[rnd19] + " рукавами, которая заканчивается " + rnd21 + " и " + rnd22 + " " + rnd23 + ". "
+  if (hasSleeves) {
+    description += "Рукава его куртки " + rnd25 + " и " + rnd26 + ", они украшены " + rnd27 + "."
+  }
+
+  return {
+    title: title,
+    description: description,
+    hasSleeves: hasSleeves,
+    neckline: rnd28
+  }
+}
+
+function generateShirt() {
+  var rnd25 = models.generate(nm25)
+  var rnd26 = models.generate(nm26)
+  var rnd27 = models.generate(nm27)
+  var rnd28 = models.generate(nm28)
+  var rnd29 = models.generate(nm29)
+  var rnd30 = models.generate(nm30)
+  var rnd31 = models.generate(nm31)
+  var rnd32 = models.generate(nm32)
+  var rnd33 = models.generate(nm33)
+
+  var title = uppercase(rnd29) + " рубаха"
+  var description = "У него " + lowercase(title) + ". "
+  description += "Вместе с рубахой он носит " + rnd30 + " " + rnd31 + ", скрепленный " + rnd32 + ". "
+  description += uppercase(rnd31) + " " + rnd33 + "."
+  var sleeves = "Рукава его рубахи " + rnd25 + " и " + rnd26 + ", они украшены " + rnd27 + "."
+
+  return {
+    title: title,
+    description: description,
+    sleeves: sleeves
+  }
+}
+
+function generatePants() {
+  var rnd34 = models.generate(nm25)
+
+  var description = "Простые и " + rnd34 + " брюки"
+
+  return {
+    title: description,
+    description: description
+  }
+}
+
+function generateShoes() {
+  var rnd35 = models.generate(nm35)
+  var rnd36 = models.generate(nm36)
+  var rnd37 = models.generate(nm37)
+  var rnd38 = models.generate(nm38)
+
+  var shoes = rnd38[0].toUpperCase() + rnd38.substring(1)
+  var description = shoes + " сделаны из " + rnd36 + " " + rnd35 + ", но в остальном они " + rnd37 + "."
+
+  return {
+    title: shoes + " из " + rnd35,
+    description: description
+  }
+}
+
 function generate (sex) {
-  var nm24 = " куртки "
+  var clothings = []
   if (!sex) { sex = models.randomSex() }
 
   if (sex == 1) {
-    var rnd = models.generate(nm1)
-    var rnd2 = models.generate(nm2)
-    var rnd3 = models.generate(nm3)
-    var rnd1 = models.generate(nm1)
-    while(rnd === rnd1) {
-      rnd1 = models.generate(nm1)
-    }
-
-    var rnd4 = models.generate(nm4)
-    var rnd5 = models.generate(nm5)
-    var rnd6 = models.generate(nm6)
-    var rnd7 = models.generate(nm7)
-    var rnd8 = models.generate(nm8)
-
-    var rnd9 = models.generate(nm9)
-    var rnd10 = models.generate(nm10)
-    var rnd11 = models.generate(nm11)
-    var rnd12 = models.generate(nm12)
-    var rnd13 = models.generate(nm13)
-    var rnd14 = models.generate(nm14)
-    var rnd15 = models.generate(nm15)
-    var rnd16 = models.generate(nm16)
-    var rnd16b = models.generate(nm6)
-    var rnd17 = models.generate(nm17)
-    var rnd18 = models.generate(nm18)
-
-    rnd4 = rnd4[0].toUpperCase() + rnd4.substring(1)
-
-    var name = 'Она одета в ' + rnd + ' платье с ' + rnd2 + ', который ' + rnd3 + ' открывает ' + rnd1 + ' нижнее платье. '
-    name += rnd4 + ' ' + rnd5 + ' её платья покрывает живот, где непрерывный поток платья прерывается ' + rnd6 + ' ' + rnd7 + ', который она носит ' + rnd8 + ' на талии.'
-    var name2 = "Под " + rnd7 + " платье " + rnd9 + " нижнее платье. "
-    name2 += "Передний край верхнего платья " + rnd10 + ", а задний образует " + rnd11 + " шлейф и оканчивается " + rnd12 + "."
-    var name3 = "Её рукава " + rnd13 + " и " + rnd14 + ", " + rnd15 + " они " + rnd16 + " отделаны " + rnd16b + ", " + rnd17 + " пояском из того же материала, что и отделка " + rnd18 + " платья." 
-
-    var title = rnd + " платье"
+    clothings.push(generateDress())
   } else {
-    var rnd19 = models.generateId(nm19)
-    var rnd20 = models.generate(nm20)
-    var rnd21 = models.generate(nm21)
-    var rnd22 = models.generate(nm22)
-    var rnd23 = models.generate(nm23)
-    if(rnd19  > 2){
-      nm24 = " рубахи "
+    var jacket = null
+    var shirt = null
+    var pants = null
+    var shoes = null
+
+    var description = ''
+
+    if (models.generate([0, 1])) jacket = generateJacket()
+    if (models.generate([0, 1])) shirt = generateShirt()
+    if (models.generate([0, 1])) pants = generatePants()
+    if (models.generate([0, 1])) shoes = generateShoes()
+
+    if (jacket) {
+      description += jacket.description
+      if (!jacket.hasSleeves) {
+        if (shirt) {
+          description += shirt.sleeves
+        }
+      }
+      description += "\n"
+
+      description += "У куртки " + jacket.neckline
+      if (shirt) {
+        description += " через который видна " + lowercase(shirt.title) + ". "
+        description += "Под курткой у него " + lowercase(shirt.description)
+      } else {
+        description += "."
+      }
     }
-    var rnd25 = models.generate(nm25)
-    var rnd26 = models.generate(nm26)
-    var rnd27 = models.generate(nm27)
-    var rnd28 = models.generate(nm28)
-    var rnd29 = models.generate(nm29)
-    var rnd30 = models.generate(nm30)
-    var rnd31 = models.generate(nm31)
-    var rnd32 = models.generate(nm32)
-    var rnd33 = models.generate(nm33)
-    var rnd34 = models.generate(nm25)
-    var rnd35 = models.generate(nm35)
-    var rnd36 = models.generate(nm36)
-    var rnd37 = models.generate(nm37)
-    var rnd38 = models.generate(nm38)
 
-    rnd31b = rnd31[0].toUpperCase() + rnd31.substring(1)
-    rnd38b = rnd38[0].toUpperCase() + rnd38.substring(1)
+    if (description) {
+      description += "\n"
+    }
 
-    var name = "На нем " + rnd20 + " куртка с " + nm19[rnd19] + " рукавами, которая заканчивается " + rnd21 + " и " + rnd22 + " " + rnd23 + ". "
-    name += "Рукава его" + nm24 + " " + rnd25 + " и " + rnd26 + ", они украшены " + rnd27 + "."
-    var name2 = "У куртки " + rnd28 + " через который видна " + rnd29 + " рубаха, которую он носит под курткой. "
-    name2 += "Вместе с рубахой он носит " + rnd30 + " " + rnd31 + ", скрепленный " + rnd32 + ". "
-    name2 += rnd31b + " " + rnd33 + "."
-    var name3 = "Его простые и " + rnd34 + " брюки переходят в " + rnd38 + " из " + rnd35 + ". "
-    name3 += rnd38b + " сделаны из " + rnd36 + " " + rnd35 + ", но в остальном они " + rnd37 + "."
+    if (pants) {
+      description += "На нем " + lowercase(pants.title)
+      if (shoes) {
+        description += " и " + lowercase(shoes.title) + ". "
+      } else {
+        description += "."
+      }
+    }
 
-    var title = rnd20 + " куртка"
+    if (shoes) {
+      description += shoes.description
+    }
+
+    var title = 'Одежда'
+
+    clothings.push({
+      title: title,
+      description: description
+    })
+    clothings.push(jacket)
+    clothings.push(shirt)
+    clothings.push(pants)
+    clothings.push(shoes)
   }
 
-  if (title) {
-     title = title[0].toUpperCase() + title.substring(1)
-  }
-
-  var element = ''
-  element += name + "\n"
-  element += name2 + "\n"
-  element += name3
-  return {
-    title: title,
-    description: element
-  }
+  return clothings
 }
 
 module.exports = {
