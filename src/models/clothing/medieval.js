@@ -185,18 +185,19 @@ function generateShoes() {
 }
 
 function generate (sex) {
+  var description = ''
   var clothings = []
   if (!sex) { sex = models.randomSex() }
 
   if (sex == 1) {
-    clothings.push(generateDress())
+    var dress = generateDress()
+    description = dress.description
+    clothings.push(dress)
   } else {
     var jacket = null
     var shirt = null
     var pants = null
     var shoes = null
-
-    var description = ''
 
     if (models.generate([0, 1])) jacket = generateJacket()
     if (models.generate([0, 1])) shirt = generateShirt()
@@ -214,10 +215,16 @@ function generate (sex) {
 
       description += "У куртки " + jacket.neckline
       if (shirt) {
-        description += " через который видна " + lowercase(shirt.title) + ". "
-        description += "Под курткой у него " + lowercase(shirt.description)
+        description += " через который видна " + lowercase(shirt.title)
+      }
+      description += "."
+    }
+
+    if (shirt) {
+      if (jacket) {
+        description += " Под курткой у него " + lowercase(shirt.description)
       } else {
-        description += "."
+        description += shirt.description
       }
     }
 
@@ -238,19 +245,16 @@ function generate (sex) {
       description += shoes.description
     }
 
-    var title = 'Одежда'
-
-    clothings.push({
-      title: title,
-      description: description
-    })
-    clothings.push(jacket)
-    clothings.push(shirt)
-    clothings.push(pants)
-    clothings.push(shoes)
+    if (jacket) clothings.push(jacket)
+    if (shirt) clothings.push(shirt)
+    if (pants) clothings.push(pants)
+    if (shoes) clothings.push(shoes)
   }
 
-  return clothings
+  return {
+    description: description,
+    items: clothings
+  }
 }
 
 module.exports = {
