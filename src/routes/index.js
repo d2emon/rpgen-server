@@ -2,6 +2,7 @@ var express = require('express')
 var router = express.Router()
 var worlds = require('../models/worlds')
 var names = require('../models/names/medieval')
+var aliens = require('../models/alien')
 var clothing = require('../models/clothing/medieval')
 
 router.use(function (req, res, next) {
@@ -35,6 +36,22 @@ router.get('/worlds', function (req, res) {
 
   res.send({
     'worlds': generated
+  })
+})
+
+router.get('/aliens', function (req, res) {
+  var count = req.query.count
+  if (!count) { count = 1 }
+
+  var generated = []
+  for (var i=0; i < count; i++) {
+    generated.push(aliens.generate())
+  }
+  console.log(count)
+  console.log(generated)
+
+  res.send({
+    'aliens': generated
   })
 })
 
