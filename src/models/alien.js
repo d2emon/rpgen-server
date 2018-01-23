@@ -1,9 +1,9 @@
 var models = require('./index')
 
-var names3 = ["two eyes","four eyes","six eyes","two eyes","four eyes","two eyes"];
-var names4 = ["deep","narrowly","buried","far","rooted","well","low","high","sunken","lightly","thightly","graciously","concealed","delicately","elegantly","gracefully"];
-var names5 = ["friendly","angry","arrogant","reserved","serene","compased","distant","modest","restrained","cautious","gentle","withdrawn","annoyed","nervous","agitated","bold","excited","troubled","upset","formal","evil","trustworthy","untrustworthy","sly","honest","dishonest","slick","elusive","calculating","intelligent"];
-var names6 = ["excellent","fairly good","quite good","not the best","amazing","astonishing","a bit poor","great at distances","not too great at distances","impressive","average","not that great","among the best","almost among the best","perhaps the best of all species"];
+var names3 = require('../../data/alien-eyes-count.json')
+var names4 = require('../../data/alien-eyes-sit.json')
+var names5 = require('../../data/alien-eyes-sight.json')
+var names6 = require('../../data/alien-eyes-see.json')
 			
 var names7a = ["wide mouths","small mouths","long mouths","huge mouths","thin mouths","narrow mouths","enormous mouths"];
 var names7b = [" and huge noses"," and small noses"," and wide noses"," and long noses"," and enormous noses"," and thin noses"," and almost hidden noses"," and lack of a visible nose"," and tiny noses"," and narrow noses"];
@@ -179,15 +179,18 @@ function generate () {
   var name = 'Этот вид инопланетян - ' + data.title + '. '
   name += 'У них ' + random2a + random2b + random2c + '.\n'
 	
-  name += 'У них ' + random3 + " which sit " + random4 + " in their sockets and can often make them appear to be " + random5a + ". Their eyesight is " + random6a + ".\n"
+  name += 'У них ' + random3 + ', которые ' + random4 + ' и придают им ' + random5a + ' вид. '
+  name += 'Их зрение ' + random6a + '.\n'
 			
-  name += "Их " + data.names7a[random7a] + data.names7b[random7b] + " often make these aliens appear to be " + random5b + ", but looks can be deceiving.<br />"
-  name += "Их уши " + data.names8[random8] + " and their hearing is " + random6b + ". " + data.names9[random9] + '\n'
+  name += 'Их ' + data.names7a[random7a] + data.names7b[random7b] + ' часто придает этим инопланетянам ' + random5b + ' вид, но это обманчивое впечатление.<br />'
+  name += 'Их уши ' + data.names8[random8] + ' and their hearing is ' + random6b + '. '
+  name += data.names9[random9] + '\n'
 			
-  name += "Их кожа " + names10[random10] + " " + data.names11[random11] + "<br />"
-  name += data.names11a + " в основном " + names12a[random12a] + names12b[random12b] + names12c[random12c] + names12c[random12d] + names12d[random12e] + ", which tend to become " + names13[random13] + " с возрастом.\n"
+  name += 'Их кожа ' + names10[random10] + ' ' + data.names11[random11] + '<br />'
+  name += data.names11a + ' в основном ' + names12a[random12a] + names12b[random12b] + names12c[random12c] + names12c[random12d] + names12d[random12e] + ', which tend to become ' + names13[random13] + ' с возрастом.\n'
 			
-  name += "Их мужчины обычно " + names14[random14a] + " чем их женщины и their colors are " + names15[random15] + ". The females, however, are usually " + names14[random14b] + "."
+  name += 'Их мужчины обычно ' + names14[random14a] + ' чем их женщины и their colors are ' + names15[random15] + '. '
+  name += 'The females, however, are usually ' + names14[random14b] + '.'
 		
   return name
 }
