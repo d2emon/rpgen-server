@@ -5,11 +5,6 @@ var names4 = require('../../data/alien-eyes-sit.json')
 var names5 = require('../../data/alien-eyes-sight.json')
 var names6 = require('../../data/alien-eyes-see.json')
 			
-var names7a = ["wide mouths","small mouths","long mouths","huge mouths","thin mouths","narrow mouths","enormous mouths"];
-var names7b = [" and huge noses"," and small noses"," and wide noses"," and long noses"," and enormous noses"," and thin noses"," and almost hidden noses"," and lack of a visible nose"," and tiny noses"," and narrow noses"];
-			
-var names8 = ["almost invisible","long and pointy","small","huge","large","long","quite long","a bit small","wide and long","long and narrow","will hidden","small and pointy","wide and large","long and hanging","small and stubby"];
-
 var names9 = ["They also have two horns on their heads.","They also have three horns on their heads.","They also have four horns on their heads.","They also have horns covering their face.","They also have horns running across their backs.","They also have small horns on their hands.","They also have small horns on their hands, arms and legs.","They also have two small horns on their elbows.","They also have two horns on their heels.","They also have small horns on their feet.","They also have small horns on their hands and feet.","They also have small horns across their chests.","They also have small horns across their body.","They also have small horns across their chests and backs.","They also have one long horn on their head.","","","","",""];
 			
 var names10 = ["very thick and rough.","smooth and thin.","thin, but strong.","thin and fairly weak.","very thick and very strong.","very strong, but not very thick.","course, thick and strong.","smooth, yet strong.","smooth, elastic and quite strong.","elastic and strong."];
@@ -32,7 +27,7 @@ function getMammal () {
     names2c: require('../../data/alien-mammal-parts-3.json'),
     names7a: require('../../data/alien-mammal-mouths.json'),
     names7b: require('../../data/alien-mammal-noses.json'),
-    names8: names8,
+    names8: require('../../data/alien-mammal-ears.json'),
     names9: names9,
     names11: names11,
     names11a: "Их кожа "
@@ -76,7 +71,7 @@ function getFish () {
   data.names2b = require('../../data/alien-fish-parts-2.json')
   data.names2c = require('../../data/alien-fish-parts-3.json')
   data.names7b = require('../../data/alien-fish-noses.json')
-  data.names8 = ["almost invisible","small","will hidden","small and pointy","small and stubby"];
+  data.names8 = require('../../data/alien-fish-ears.json'),
   data.names11 = ["It's covered in thin, coarse scales.","It's covered in large, coarse scales.","It's covered in large, smooth scales.","It's covered in large, strong scales.","It's covered in small, coarse scales.","It's covered in small, smooth scales.","It's covered in small, strong scales.","It's covered in strong, hard scales.","It's covered in thick, coarse scales.","It's covered in thick, strong scales."];
   data.names11a = "Их чешуя "
   return data
@@ -99,7 +94,7 @@ function getBird () {
   data.names2c = require('../../data/alien-bird-parts-3.json')
   data.names7a = require('../../data/alien-bird-mouths.json')
   data.names7b = [""];
-  data.names8 = ["almost invisible","small","will hidden","small and pointy","small and stubby","hidden behind their feathers"];
+  data.names8 = require('../../data/alien-bird-ears.json'),
   data.names9 = [""];
   data.names11 = ["It's covered in large feathers.","It's covered in large, thin feathers.","It's covered in large, wide feathers.","It's covered in long, thin feathers.","It's covered in long, wide feathers.","It's covered in short, thin feathers.","It's covered in short, wide feathers.","It's covered in small feathers.","It's covered in small, thin feathers.","It's covered in small, wide feathers."];
   data.names11a = "Их перья "
@@ -145,28 +140,28 @@ function generate () {
     random6b = models.generate(names6)
   }
 
-  var random7a = parseInt(Math.floor((Math.random() * data.names7a.length)));
-  var random7b = parseInt(Math.floor((Math.random() * data.names7b.length)));			
-  var random8 = parseInt(Math.floor((Math.random() * data.names8.length)));
-  var random9 = parseInt(Math.floor((Math.random() * data.names9.length)));
-  var random10 = parseInt(Math.floor((Math.random() * names10.length)));
-  var random11 = parseInt(Math.floor((Math.random() * data.names11.length)));
-  var random12a = parseInt(Math.floor((Math.random() * names12a.length)));
-  var random12b = parseInt(Math.floor((Math.random() * names12b.length)));
+  var random7a = models.generate(data.names7a)
+  var random7b = models.generate(data.names7b)
+  var random8 = models.generate(data.names8)
+  var random9 = models.generate(data.names9)
+  var random10 = models.generate(names10)
+  var random11 = models.generate(data.names11)
+  var random12a = models.generate(names12a)
+  var random12b = models.generate(names12b)
   while(random12b === random12a){
-    random2b = parseInt(Math.floor((Math.random() * names12b.length)));
+    random12b = models.generate(names12b)
   }
-  var random12c = parseInt(Math.floor((Math.random() * names12c.length)));
+  var random12c = models.generate(names12c)
   while(random12c === random12a || random12c === random12b){
-    random12c = parseInt(Math.floor((Math.random() * names12c.length)));
+    random12c = models.generate(names12c)
   }
-  var random12d = parseInt(Math.floor((Math.random() * names12c.length)));
+  var random12d = models.generate(names12c)
   while(random12d === random12a || random12d === random12b || random12d === random12c){
-    random12d = parseInt(Math.floor((Math.random() * names12c.length)));
+    random12d = models.generate(names12c)
   }
-  var random12e = parseInt(Math.floor((Math.random() * names12d.length)));
+  var random12e = models.generate(names12d)
   while(random12e === random12a || random12e === random12b || random12e === random12c || random12e === random12d){
-    random12e = parseInt(Math.floor((Math.random() * names12d.length)));
+    random12e = models.generate(names12d)
   }
   var random13 = parseInt(Math.floor((Math.random() * names13.length)));
   var random14a = parseInt(Math.floor((Math.random() * names14.length)));
@@ -182,12 +177,12 @@ function generate () {
   name += 'У них ' + random3 + ', которые ' + random4 + ' и придают им ' + random5a + ' вид. '
   name += 'Их зрение ' + random6a + '.\n'
 			
-  name += 'Их ' + data.names7a[random7a] + data.names7b[random7b] + ' часто придают этим инопланетянам ' + random5b + ' вид, но это обманчивое впечатление.<br />'
-  name += 'Их уши ' + data.names8[random8] + ' and their hearing is ' + random6b + '. '
-  name += data.names9[random9] + '\n'
+  name += 'Их ' + random7a + random7b + ' часто придают этим инопланетянам ' + random5b + ' вид, но это обманчивое впечатление.<br />'
+  name += 'Их уши ' + random8 + ', а их слух ' + random6b + '. '
+  name += random9 + '\n'
 			
-  name += 'Их кожа ' + names10[random10] + ' ' + data.names11[random11] + '<br />'
-  name += data.names11a + ' в основном ' + names12a[random12a] + names12b[random12b] + names12c[random12c] + names12c[random12d] + names12d[random12e] + ', which tend to become ' + names13[random13] + ' с возрастом.\n'
+  name += 'Их кожа ' + random10 + ' ' + random11 + '<br />'
+  name += data.names11a + ' в основном ' + random12a + random12b + random12c + random12d + random12e + ', и с возрастом становится ' + names13[random13] + '.\n'
 			
   name += 'Их мужчины обычно ' + names14[random14a] + ' чем их женщины и their colors are ' + names15[random15] + '. '
   name += 'The females, however, are usually ' + names14[random14b] + '.'
