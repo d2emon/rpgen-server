@@ -5,8 +5,6 @@ var names4 = require('../../data/alien-eyes-sit.json')
 var names5 = require('../../data/alien-eyes-sight.json')
 var names6 = require('../../data/alien-eyes-see.json')
 			
-var names9 = ["They also have two horns on their heads.","They also have three horns on their heads.","They also have four horns on their heads.","They also have horns covering their face.","They also have horns running across their backs.","They also have small horns on their hands.","They also have small horns on their hands, arms and legs.","They also have two small horns on their elbows.","They also have two horns on their heels.","They also have small horns on their feet.","They also have small horns on their hands and feet.","They also have small horns across their chests.","They also have small horns across their body.","They also have small horns across their chests and backs.","They also have one long horn on their head.","","","","",""];
-			
 var names10 = ["very thick and rough.","smooth and thin.","thin, but strong.","thin and fairly weak.","very thick and very strong.","very strong, but not very thick.","course, thick and strong.","smooth, yet strong.","smooth, elastic and quite strong.","elastic and strong."];
 var names11 = ["It's covered in thick fur.","It's covered lightly in small hairs.","It's covered lightly in long, coarse hairs.","It's covered in thick, course fur.","It's covered long, wavy hairs.","It's covered short hairs.","It's covered short, curly hairs.","It's covered in nothing but a few hairs on their hands.","It's covered in nothing but hair on their heads, arms and legs.","It's covered in nothing, except for hair on their heads.","It's covered in nothing, except for hairs on their heads, chests, arms and legs.","It's covered in nothing but a few hairs on their heads.","It's covered lightly in tiny hairs.","It's covered in thick, short hairs.","It's covered in soft, short hairs."];
 			
@@ -28,7 +26,7 @@ function getMammal () {
     names7a: require('../../data/alien-mammal-mouths.json'),
     names7b: require('../../data/alien-mammal-noses.json'),
     names8: require('../../data/alien-mammal-ears.json'),
-    names9: names9,
+    names9: require('../../data/alien-mammal-horns.json'),
     names11: names11,
     names11a: "Их кожа "
   }
@@ -40,7 +38,7 @@ function getAquatic () {
   data.names2a = require('../../data/alien-aquatic-parts-1.json'),
   data.names2b = require('../../data/alien-aquatic-parts-2.json'),
   data.names2c = require('../../data/alien-aquatic-parts-3.json'),
-  data.names9 = ["They also have two horns on their heads.","They also have three horns on their heads.","They also have four horns on their heads.","They also have horns running across their backs.","They also have one long horn on their head.","","","","",""]
+  data.names9 = require('../../data/alien-aquatic-horns.json'),
   data.names11 = [""]
   return data
 }
