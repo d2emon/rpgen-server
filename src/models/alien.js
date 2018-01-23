@@ -30,8 +30,8 @@ function getMammal () {
     names2a: require('../../data/alien-mammal-parts-1.json'),
     names2b: require('../../data/alien-mammal-parts-2.json'),
     names2c: require('../../data/alien-mammal-parts-3.json'),
-    names7a: names7a,
-    names7b: names7b,
+    names7a: require('../../data/alien-mammal-mouths.json'),
+    names7b: require('../../data/alien-mammal-noses.json'),
     names8: names8,
     names9: names9,
     names11: names11,
@@ -75,7 +75,7 @@ function getFish () {
   data.names2a = require('../../data/alien-fish-parts-1.json')
   data.names2b = require('../../data/alien-fish-parts-2.json')
   data.names2c = require('../../data/alien-fish-parts-3.json')
-  data.names7b = [" and small noses"," and wide noses"," and long noses"," and thin noses"," and almost hidden noses"," and lack of a visible nose"," and tiny noses"," and narrow noses"];
+  data.names7b = require('../../data/alien-fish-noses.json')
   data.names8 = ["almost invisible","small","will hidden","small and pointy","small and stubby"];
   data.names11 = ["It's covered in thin, coarse scales.","It's covered in large, coarse scales.","It's covered in large, smooth scales.","It's covered in large, strong scales.","It's covered in small, coarse scales.","It's covered in small, smooth scales.","It's covered in small, strong scales.","It's covered in strong, hard scales.","It's covered in thick, coarse scales.","It's covered in thick, strong scales."];
   data.names11a = "Их чешуя "
@@ -97,7 +97,7 @@ function getBird () {
   data.names2a = require('../../data/alien-bird-parts-1.json')
   data.names2b = require('../../data/alien-bird-parts-2.json')
   data.names2c = require('../../data/alien-bird-parts-3.json')
-  data.names7a = ["long beaks","sharp beaks","thin beaks","short beaks","huge beaks","enormous beaks","wide beaks","thin, sharp beaks","long, sharp beaks","long, pointy beaks","short, pointy beaks","huge, pointy beaks","huge, sharp beaks","short, sharp beaks","thin, pointy beaks"];
+  data.names7a = require('../../data/alien-bird-mouths.json')
   data.names7b = [""];
   data.names8 = ["almost invisible","small","will hidden","small and pointy","small and stubby","hidden behind their feathers"];
   data.names9 = [""];
@@ -182,7 +182,7 @@ function generate () {
   name += 'У них ' + random3 + ', которые ' + random4 + ' и придают им ' + random5a + ' вид. '
   name += 'Их зрение ' + random6a + '.\n'
 			
-  name += 'Их ' + data.names7a[random7a] + data.names7b[random7b] + ' часто придает этим инопланетянам ' + random5b + ' вид, но это обманчивое впечатление.<br />'
+  name += 'Их ' + data.names7a[random7a] + data.names7b[random7b] + ' часто придают этим инопланетянам ' + random5b + ' вид, но это обманчивое впечатление.<br />'
   name += 'Их уши ' + data.names8[random8] + ' and their hearing is ' + random6b + '. '
   name += data.names9[random9] + '\n'
 			
