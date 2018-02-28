@@ -12,12 +12,10 @@ var buffer = require('../buffer')
 function prepare(user) {
   buffer.makebfr()
   cms = -1
-  user.putmeon()
+  user.puton()
+  console.log(user)
   if (!world.load())
     throw Error('Sorry AberMUD is currently unavailable')
-  if (mynum >= maxu) {
-    throw Error('Sorry AberMUD is full at the moment')
-  }
   user.rte()
   world.save()
   cms = -1
