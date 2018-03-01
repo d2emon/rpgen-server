@@ -1,4 +1,3 @@
-var in_fight = false
 var sig_active = true
 function alarm(t) { console.log('\tALARM(' + t + ')') }
 function sig_ignore() {}
@@ -44,7 +43,7 @@ sig_occur()
 
 function sig_ctrlc() {
   console.log('^C\n')
-  if (in_fight) return
+  if (player.in_fight) return
   sig_aloff()
 	player.loseme()
 	crapup('Byeeeeeeeeee  ...........')
