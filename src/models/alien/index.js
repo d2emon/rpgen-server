@@ -1,128 +1,62 @@
-var models = require('./index')
+var models = require('../index')
+var getAlien = require('./alien-type')
+var getInvertebrate = require('./type-invertebrate')
+var getFish = require('./type-fish')
+var getAmphibian = require('./type-amphibian')
+var getReptile = require('./type-reptile')
+var getBird = require('./type-bird')
+var getMammal = require('./type-mammal')
+var getAquatic = require('./type-aquatic')
 
-var names3 = require('../../data/alien-eyes-count.json')
-var names4 = require('../../data/alien-eyes-sit.json')
-var names5 = require('../../data/alien-eyes-sight.json')
-var names6 = require('../../data/alien-eyes-see.json')
-			
+
+var names3 = require('../../../data/alien-eyes-count.json')
+var names4 = require('../../../data/alien-eyes-sit.json')
+var names5 = require('../../../data/alien-eyes-sight.json')
+var names6 = require('../../../data/alien-eyes-see.json')
+
 var names10 = ["very thick and rough.","smooth and thin.","thin, but strong.","thin and fairly weak.","very thick and very strong.","very strong, but not very thick.","course, thick and strong.","smooth, yet strong.","smooth, elastic and quite strong.","elastic and strong."];
 var names11 = ["It's covered in thick fur.","It's covered lightly in small hairs.","It's covered lightly in long, coarse hairs.","It's covered in thick, course fur.","It's covered long, wavy hairs.","It's covered short hairs.","It's covered short, curly hairs.","It's covered in nothing but a few hairs on their hands.","It's covered in nothing but hair on their heads, arms and legs.","It's covered in nothing, except for hair on their heads.","It's covered in nothing, except for hairs on their heads, chests, arms and legs.","It's covered in nothing but a few hairs on their heads.","It's covered lightly in tiny hairs.","It's covered in thick, short hairs.","It's covered in soft, short hairs."];
-			
+
 var names12a = ["black","blue","bronze","brown","gold","grey","orange","pink","purple","red","silver","white","yellow","dark blue","dark bronze","dark brown","dark gold","dark grey","dark orange","dark pink","dark purple","dark red","dark silver","dark yellow","light blue","light bronze","light brown","light gold","light grey","light orange","light pink","light purple","light red","light silver","light yellow"];
 var names12b = [", black",", blue",", bronze",", brown",", gold",", grey",", orange",", pink",", purple",", red",", silver",", white",", yellow",", dark blue",", dark bronze",", dark brown",", dark gold",", dark grey",", dark orange",", dark pink",", dark purple",", dark red",", dark silver",", dark yellow",", light blue",", light bronze",", light brown",", light gold",", light grey",", light orange",", light pink",", light purple",", light red",", light silver",", light yellow","","","","","","","","","","","","","","","","","","","","","","","","",""];
 var names12c = [", black",", blue",", bronze",", brown",", gold",", grey",", orange",", pink",", purple",", red",", silver",", white",", yellow",", dark blue",", dark bronze",", dark brown",", dark gold",", dark grey",", dark orange",", dark pink",", dark purple",", dark red",", dark silver",", dark yellow",", light blue",", light bronze",", light brown",", light gold",", light grey",", light orange",", light pink",", light purple",", light red",", light silver",", light yellow","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""];
 var names12d = [" and blac			k"," and blue"," and bronze"," and brown"," and gold"," and grey"," and orange"," and pink"," and purple"," and red"," and silver"," and white"," and yellow"," and dark blue"," and dark bronze"," and dark brown"," and dark gold"," and dark grey"," and dark orange"," and dark pink"," and dark purple"," and dark red"," and dark silver"," and dark yellow"," and light blue"," and light bronze"," and light brown"," and light gold"," and light grey"," and light orange"," and light pink"," and light purple"," and light red"," and light silver"," and light yellow"];
 var names13 = ["darker","lighter","dull","dim","pale","faded"];
-			
+
 var names14 = ["more arrogant","bigger","bossier","braver","bulkier","faster","friendlier","heavier","lazier","more adventurous","more confident","more cunning","more dependable","more emotional","more gracious","more helpful","more honorable","more humble","more impulsive","more independent","more obedient","more obnoxious","more optimistic","more self-centered","more self-reliant","more vulgar","smarter","sneakier","stronger","taller"];
 var names15 = ["more vibrant","less vibrant","more varied","less varied","darker","lighter"];
 
-function getMammal () {
-  return {
-    title: 'млекопитающие',
-    names2a: require('../../data/alien-mammal-parts-1.json'),
-    names2b: require('../../data/alien-mammal-parts-2.json'),
-    names2c: require('../../data/alien-mammal-parts-3.json'),
-    names7a: require('../../data/alien-mammal-mouths.json'),
-    names7b: require('../../data/alien-mammal-noses.json'),
-    names8: require('../../data/alien-mammal-ears.json'),
-    names9: require('../../data/alien-mammal-horns.json'),
-    names11: names11,
-    names11a: "Их кожа "
+function generateAlienType () {
+	var random1 = parseInt(Math.floor((Math.random() * 8)))
+  if (random1 === 1) {
+    return getAquatic()
   }
-}
-
-function getAquatic () {
-  data = getMammal()
-  data.title = 'водные млекопитающие'
-  data.names2a = require('../../data/alien-aquatic-parts-1.json'),
-  data.names2b = require('../../data/alien-aquatic-parts-2.json'),
-  data.names2c = require('../../data/alien-aquatic-parts-3.json'),
-  data.names9 = require('../../data/alien-aquatic-horns.json'),
-  data.names11 = [""]
-  return data
-}
-
-function getAmphibian () {
-  data = getMammal()
-  data.title = 'амфибии'
-  data.names2c = require('../../data/alien-amphibian-parts-3.json'),
-  data.names11 = ["It's covered in a thin layer of mucous.","It's covered in a thick layer of mucous.","It's covered in a very thin layer of mucous.","It's covered in a very thick layer of mucous.","It's covered lightly in mucous."]
-  return data
-}
-
-function getReptile () {
-  data = getMammal()
-  data.title = 'рептилии'
-  data.names2a = require('../../data/alien-reptile-parts-1.json')
-  data.names2b = [""]
-  data.names2c = require('../../data/alien-reptile-parts-3.json')
-  data.names11 = ["It's covered in thin, coarse scales.","It's covered in large, coarse scales.","It's covered in large, smooth scales.","It's covered in large, strong scales.","It's covered in small, coarse scales.","It's covered in small, smooth scales.","It's covered in small, strong scales.","It's covered in strong, hard scales.","It's covered in thick, coarse scales.","It's covered in thick, strong scales."]
-  data.names11a = "Их чешуя "
-  return data
-}
-
-function getFish () {
-  data = getMammal()
-  data.title = 'рыбы'
-  data.names2a = require('../../data/alien-fish-parts-1.json')
-  data.names2b = require('../../data/alien-fish-parts-2.json')
-  data.names2c = require('../../data/alien-fish-parts-3.json')
-  data.names7b = require('../../data/alien-fish-noses.json')
-  data.names8 = require('../../data/alien-fish-ears.json'),
-  data.names11 = ["It's covered in thin, coarse scales.","It's covered in large, coarse scales.","It's covered in large, smooth scales.","It's covered in large, strong scales.","It's covered in small, coarse scales.","It's covered in small, smooth scales.","It's covered in small, strong scales.","It's covered in strong, hard scales.","It's covered in thick, coarse scales.","It's covered in thick, strong scales."];
-  data.names11a = "Их чешуя "
-  return data
-}
-
-function getInvertebrate () {
-  data = getMammal()
-  data.title = 'беспозвоночнные'
-  data.names2a = require('../../data/alien-invertebrate-parts-1.json')
-  data.names2b = require('../../data/alien-invertebrate-parts-2.json')
-  data.names2c = require('../../data/alien-invertebrate-parts-3.json')
-  return data
-}
-
-function getBird () {
-  data = getMammal()
-  data.title = 'птицы'
-  data.names2a = require('../../data/alien-bird-parts-1.json')
-  data.names2b = require('../../data/alien-bird-parts-2.json')
-  data.names2c = require('../../data/alien-bird-parts-3.json')
-  data.names7a = require('../../data/alien-bird-mouths.json')
-  data.names7b = [""];
-  data.names8 = require('../../data/alien-bird-ears.json'),
-  data.names9 = [""];
-  data.names11 = ["It's covered in large feathers.","It's covered in large, thin feathers.","It's covered in large, wide feathers.","It's covered in long, thin feathers.","It's covered in long, wide feathers.","It's covered in short, thin feathers.","It's covered in short, wide feathers.","It's covered in small feathers.","It's covered in small, thin feathers.","It's covered in small, wide feathers."];
-  data.names11a = "Их перья "
-  return data
+  else if (random1 === 2) {
+    return getAmphibian()
+  }
+  else if(random1 === 3){
+    return getReptile()
+  }
+  else if(random1 === 4){
+    return getFish()
+  }
+  else if(random1 === 5){
+    return getInvertebrate()
+  }
+  else if(random1 === 6){
+    return getBird()
+  }
+	return getMammal()
 }
 
 function generate () {
-  var random1 = parseInt(Math.floor((Math.random() * 8)))
-  var data = getMammal()
-  if (random1 === 1) {
-    data = getAquatic()
-  }
-  else if (random1 === 2) {
-    data = getAmphibian()
-  }
-  else if(random1 === 3){
-    data = getReptile()
-  }
-  else if(random1 === 4){
-    data = getFish()
-  }
-  else if(random1 === 5){
-    data = getInvertebrate()
-  }
-  else if(random1 === 6){
-    data = getBird()
-  }
+	var data = generateAlienType()
+	var alien = data.generate()
+
   var random2a = models.generate(data.names2a)
   var random2b = models.generate(data.names2b)
   var random2c = models.generate(data.names2c)
+
   var random3 = models.generate(names3)
   var random4 = models.generate(names4)
 
@@ -168,24 +102,26 @@ function generate () {
     random14b = parseInt(Math.floor((Math.random() * names14.length)));
   }
   var random15 = parseInt(Math.floor((Math.random() * names15.length)));
-			
-  var name = 'Этот вид инопланетян - ' + data.title + '. '
-  name += 'У них ' + random2a + random2b + random2c + '.\n'
-	
+
+  var name = alien.describe()
+
   name += 'У них ' + random3 + ', которые ' + random4 + ' и придают им ' + random5a + ' вид. '
   name += 'Их зрение ' + random6a + '.\n'
-			
+
   name += 'Их ' + random7a + random7b + ' часто придают этим инопланетянам ' + random5b + ' вид, но это обманчивое впечатление.<br />'
   name += 'Их уши ' + random8 + ', а их слух ' + random6b + '. '
   name += random9 + '\n'
-			
+
   name += 'Их кожа ' + random10 + ' ' + random11 + '<br />'
   name += data.names11a + ' в основном ' + random12a + random12b + random12c + random12d + random12e + ', и с возрастом становится ' + names13[random13] + '.\n'
-			
+
   name += 'Их мужчины обычно ' + names14[random14a] + ' чем их женщины и their colors are ' + names15[random15] + '. '
   name += 'The females, however, are usually ' + names14[random14b] + '.'
-		
-  return name
+
+  return {
+		details: alien,
+		description: name
+	}
 }
 
 module.exports = {

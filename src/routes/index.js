@@ -40,8 +40,7 @@ router.get('/worlds', function (req, res) {
 })
 
 router.get('/aliens', function (req, res) {
-  var count = req.query.count
-  if (!count) { count = 1 }
+  var count = req.query.count || 1
 
   var generated = []
   for (var i=0; i < count; i++) {

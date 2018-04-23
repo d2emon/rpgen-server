@@ -1,0 +1,81 @@
+[
+  {
+    "length": 2,
+    "thickness": 1,
+    "description": "с длинным, тонким хвостом"
+  },
+  {
+    "length": 2,
+    "thickness": 2,
+    "description": "с длинным, толстым хвостом"
+  },
+  {
+    "length": 1,
+    "thickness": 1,
+    "description": "с коротким, тонким хвостом"
+  },
+  {
+    "length": 1,
+    "thickness": 2,
+    "description": "с коротким, толстым хвостом"
+  },
+  {
+    "rudimental": true,
+    "description": "с рудиментарным хвостом"
+  },
+  {
+    "length": 0,
+    "description": "и нет хвоста"
+  },
+  {
+    "length": 2,
+    "strength": 2,
+    "agile": true,
+    "description": "с длинным, сильным и ловким хвостом"
+  },
+  {
+    "length": 1,
+    "strength": 2,
+    "description": "с коротким, сильным хвостом"
+  },
+  {
+    "length": 2,
+    "strength": 2,
+    "description": "с длинным, сильным хвостом"
+  },
+  {
+    "length": 1,
+    "muscular": true,
+    "description": "с коротким, мускулистым хвостом"
+  },
+  {
+    "length": 2,
+    "muscular": true,
+    "description": "с длинным, мускулистым хвостом"
+  },
+  {
+    "length": 2,
+    "strength": 1,
+    "description": "с длинным, слабым хвостом"
+  },
+  {
+    "length": 1,
+    "strength": 1,
+    "description": "с коротким, слабым хвостом"
+  },
+  {
+    "length": 2,
+    "useless": true,
+    "description": "с длинным, бесполезным хвостом"
+  },
+  {
+    "length": 1,
+    "useless": true,
+    "description": "с коротким, бесполезным хвостом"
+  },
+  {
+    "length": 1,
+    "stubby": true,
+    "description": "с коротким, коренастым хвостом"
+  }
+]

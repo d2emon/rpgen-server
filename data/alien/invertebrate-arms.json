@@ -1,0 +1,54 @@
+[
+  {
+    "arms": 2
+  },
+  {
+    "arms": 4
+  },
+  {
+    "arms": 6
+  },
+  {
+    "winged": 4
+  },
+  {
+    "winged": 2
+  },
+  {
+    "winged": 6
+  },
+  {
+    "claws": 2
+  },
+  {
+    "claws": 4
+  },
+  {
+    "wings": 2,
+    "arms": 2
+  },
+  {
+    "wings": 4,
+    "arms": 2
+  },
+  {
+    "wings": 2,
+    "arms": 4
+  },
+  {
+    "wings": 4,
+    "arms": 4
+  },
+  {
+    "wings": 2,
+    "arms": 6
+  },
+  {
+    "wings": 2,
+    "claws": 2
+  },
+  {
+    "claws": 2,
+    "arms": 2
+  }
+]

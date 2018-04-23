@@ -1,0 +1,13 @@
+[
+  { "arms": 2, "legs": 2 },
+  { "arms": 2, "legs": 4 },
+  { "arms": 2, "legs": 6 },
+  { "arms": 4, "legs": 2 },
+  { "arms": 4, "legs": 4 },
+  { "arms": 4, "legs": 6 },
+  { "arms": 6, "legs": 2 },
+  { "arms": 6, "legs": 4 },
+  { "arms": 2, "legs": 0 },
+  { "arms": 4, "legs": 0 },
+  { "arms": 6, "legs": 0 }
+]
