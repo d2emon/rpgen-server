@@ -9,6 +9,8 @@ import DayEncounter from './dayEncounter';
 import NightEncounter from './nightEncounter';
 import getDistance from './distance';
 import getReaction from './reaction';
+import countryEncounter from './country/encounter';
+import { DangerClass } from './country/dangerClass';
 
 const router = Router();
 
@@ -72,6 +74,13 @@ router.get(
 router.get(
     '/reaction/:id',
     (req: Request, res: Response) => res.json({ reaction: getReaction(Number(req.params.id)) }),
+);
+
+router.get(
+    '/country/:dangerClass',
+    (req: Request, res: Response) => res.json({
+        encounter: countryEncounter(Number(req.params.dangerClass) as DangerClass),
+    }),
 );
 
 export default router;

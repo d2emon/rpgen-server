@@ -21,6 +21,7 @@ export const d8 = diceGenerator(8);
 export const d10 = diceGenerator(10);
 export const d12 = diceGenerator(12);
 export const d20 = diceGenerator(20);
+export const d100 = diceGenerator(100);
 
 const roll = (count: number, dice: number, modifier: number = 0): number => {
     const iter = diceGenerator(dice, count);
