@@ -1,7 +1,7 @@
-import express from 'express';
+import express, {NextFunction, Request, Response} from 'express';
 import path from 'path';
 
-// import cors from 'cors';
+import cors from 'cors';
 import logger from 'morgan';
 
 import debug from './debug';
@@ -10,7 +10,8 @@ import defaultError, {
     error404,
 } from './errorHandlers';
 
-// import indexRouter from './routes';
+import indexRouter from './routes';
+import encountersRouter from './encounters/routes';
 // import usersRouter from './routes/users';
 // import mudRouter from './routes/mud';
 
@@ -20,19 +21,24 @@ const app =express();
 const publicPath = path.join(__dirname, '..', 'public');
 debug(`Public path: ${publicPath}`);
 
-// View engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'pug');
-
 // Middleware setup
-// app.use(cors());
+app.use(cors());
+/*
+app.use((req: Request, res: Response, next: NextFunction) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
+*/
 app.use(express.json());
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: true }));
 app.use(logger('dev'));
 
 // Routes setup
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
+app.use('/encounters', encountersRouter)
 // app.use('/users', usersRouter);
 // app.use('/mud', mudRouter);
 
