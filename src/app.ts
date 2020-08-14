@@ -2,17 +2,18 @@ import express, {NextFunction, Request, Response} from 'express';
 import path from 'path';
 
 import cors from 'cors';
-import logger from 'morgan';
+import morgan from 'morgan';
 
+import connectMongo from './db/mongo';
 import debug from './debug';
-// import connectMongo from './db/mongo';
 import defaultError, {
     error404,
 } from './errorHandlers';
+import logger from './log';
 
 import indexRouter from './routes';
 import encountersRouter from './encounters/routes';
-// import usersRouter from './routes/users';
+import usersRouter from './routes/users';
 // import mudRouter from './routes/mud';
 
 const app =express();
@@ -34,21 +35,35 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use(express.json());
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: true }));
-app.use(logger('dev'));
+app.use(morgan('dev'));
 
 // Routes setup
 app.use('/', indexRouter);
 app.use('/encounters', encountersRouter)
-// app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 // app.use('/mud', mudRouter);
+// app.use('/api', apiRouter); // api
+// app.use('/api/world', worldApiRouter); // api
+// app.use('/api/npc', npcApiRouter); // api
+// app.use('', authRouter); // blueprints.auth
+// app.use('/admin', adminRouter); // admin
+// app.use('/rpg', rpgRouter); // blueprints.rpg
+// app.use('/campaign', campaignRouter); // blueprints.campaign
+// app.use('/session', sessionRouter); // blueprints.gamesession
+// app.use('/world', worldRouter); // blueprints.world
+
+// Adding commands from managers
+// const rpgManager = new RpgManger(app); // blueprints.rpg
+// app.use('user', authManager); // blueprints.auth.commands
+// app.use('admin', adminManager); // admin.commands
+// app.use('generate', generateManager); // blueprints.generate.commands
 
 // Error handlers
 app.use(error404);
 app.use(defaultError);
 
-/*
-connectMongo(config.get('MONGO_URI'))
-    .then(() => log.info(`MongoDb connected to ${config.get('MONGO_URI')}`));
- */
+const mongo = 'mongodb://localhost/rpgen-server'; // config.get('MONGO_URI');
+connectMongo(mongo)
+    .then(() => logger.info(`MongoDb connected to ${mongo}`));
 
 export default app;
