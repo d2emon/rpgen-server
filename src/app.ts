@@ -4,6 +4,7 @@ import path from 'path';
 import cors from 'cors';
 import morgan from 'morgan';
 
+import config from './config';
 import connectMongo from './db/mongo';
 import debug from './debug';
 import defaultError, {
@@ -62,7 +63,7 @@ app.use('/users', usersRouter);
 app.use(error404);
 app.use(defaultError);
 
-const mongo = 'mongodb://localhost/rpgen-server'; // config.get('MONGO_URI');
+const mongo = config.get('MONGO_URI');
 connectMongo(mongo)
     .then(() => logger.info(`MongoDb connected to ${mongo}`));
 

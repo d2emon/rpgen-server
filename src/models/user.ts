@@ -2,7 +2,6 @@ import crypto from 'crypto';
 import  {
     Document,
     Model,
-    ObjectId,
     Schema,
     model,
 } from 'mongoose';
@@ -10,7 +9,7 @@ import Role, {
     IRole,
 } from './role';
 
-const banList: string[] = [];
+const disableAuth = false;
 
 const schema: Schema = new Schema({
     username: {
@@ -18,14 +17,10 @@ const schema: Schema = new Schema({
         unique: true,
         required: true,
         match: /^\w*$/,
-        // db.String(60),
-        // index=True,
-        // info={'label': "Username"}
     },
     hashedPassword: {
         type: String,
         required: true,
-        // db.String(128)
     },
     salt: {
         type: String,
@@ -33,11 +28,15 @@ const schema: Schema = new Schema({
     },
     created: {
         type: Date,
-        default: Date.now
+        default: Date.now,
     },
     role: {
-        type: ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Role',
+    },
+    disabled: {
+        type: Boolean,
+        default: false,
     },
 });
 
@@ -66,80 +65,54 @@ schema.virtual('password')
     });
 
 // Properties
-// __namegiv = false;
-// __qnmrq = false;
-// __ttyt = 0;
-// __isawiz = false;
 schema.virtual('isAdmin')
     .get(function (): boolean {
         return this.role && this.role.isAdmin;
     });
-schema.virtual('isNew')
-    .get(function (): boolean {
-        return true; // !this.id;
-    });
-schema.virtual('noLogin')
-    .get(function (): boolean {
-        return false;
-    });
-schema.virtual('qnmrq')
-    .set(function (value: boolean) {
-        this.__qnmrq = value;
-    })
-    .get(function (): boolean {
-        return this.__qnmrq;
-    });
-schema.virtual('ttyt')
-    .set(function (value: number) {
-        this.__ttyt = value;
-    })
-    .get(function (): number {
-        return this.__ttyt;
-    });
-schema.virtual('host')
-    .get(function (): string {
-        return 'Host';
-    });
-schema.virtual('fullName')
-    .get(function (): string {
-        const username = this.username.toUpperCase();
-        return this.isAdmin ? `The ${username}` : username;
-    });
-schema.virtual('isBanned')
-    .get(function (): boolean {
-        return (banList.indexOf(this.username.toLowerCase()) >= 0);
-    });
 schema.virtual('afterLogin')
-    .get(function (): string {
-        return '/';
-    });
+    .get((): string => '/');
 
 // Other methods
 schema.statics.login = async function (username: string, password: string): Promise<IUser> {
     const user: IUser = await this.byUsername(username);
+
     if (!user || !user.checkPassword(password)) {
-        return undefined;
+        throw new Error('Invalid username or password');
     }
-    user.validateLogin();
+    if (this.disableAuth) {
+        throw new Error('Authorization is disabled');
+    }
+    if (this.disabled) {
+        throw new Error('This account is disabled');
+    }
+
     return user;
 };
-schema.methods.register = function (): void {
-    this.qnmrq = true;
-    this.ttyt = 0;
-};
 
-// Validators
-schema.methods.validateLogin = function (host: string): void {
-    if (this.isBanned) {
-        throw new Error('I\'m sorry- that userid has been banned from the Game');
-    }
-    if (this.host !== host) {
-        throw new Error(`AberMUD is only available on ${host}, not on ${this.host}`);
-    }
-    if (this.noLogin) {
-        throw new Error('No login');
-    }
-};
+schema
+    .path('username')
+    .validate(async function (value: string) {
+        await this.model('User')
+            .byUsername(value)
+            .then((found: IUser) => {
+                if (found) {
+                    throw new Error(`User ${value} already exists`);
+                }
+                return true;
+            });
+    });
+
+schema.set('toJSON', {
+    transform: doc => ({
+        id: doc.id,
+        username: doc.username,
+        disabled: doc.disabled,
+        created: doc.created,
+        role: doc.role,
+        isAdmin: doc.isAdmin,
+        afterLogin: doc.afterLogin,
+    }),
+})
 
 export interface IUser extends Document {
     username: string;
@@ -147,19 +120,19 @@ export interface IUser extends Document {
     salt: string;
     created: Date;
     role: IRole;
+    disabled: boolean;
 
     password: string;
-    isBanned: boolean;
+    isAdmin: boolean;
+    afterLogin: string;
 
     encryptPassword(password: string): string;
     checkPassword(password: string): boolean;
-
-    validateLogin(): void;
 }
 
 export interface IUserModel extends Model<IUser> {
-    // encryptPassword: (password: string) => string;
-    // checkPassword: (password: string) => boolean;
+    login(username: string, password: string): Promise<IUser>;
+    byUsername(username: string): Promise<IUser>;
 }
 
 

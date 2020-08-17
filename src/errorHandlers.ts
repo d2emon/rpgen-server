@@ -1,4 +1,4 @@
-import express from 'express';
+import express, {Response} from 'express';
 
 export class HttpException extends Error {
     status: number;
@@ -8,6 +8,15 @@ export class HttpException extends Error {
         this.status = status;
         this.message = message;
     }
+}
+
+export const responseError = (res: Response, error: Error) => {
+    // tslint:disable-next-line
+    console.error(error);
+    const httpException = error as HttpException;
+    return res
+        .status(httpException.status)
+        .json({ error: httpException.message });
 }
 
 export const error403 = (req: express.Request, res: any, next: express.NextFunction) => next(
@@ -25,8 +34,10 @@ export const error500 = (req: express.Request, res: any, next: express.NextFunct
 export default (err: HttpException, req: express.Request, res: express.Response) => res
     .status(err.status || 500)
     .json({
-        message: err.message,
-        error: (req.app.get('env') === 'development')
-            ? err
-            : undefined,
+        error: {
+            message: err.message,
+            error: (req.app.get('env') === 'development')
+                ? err
+                : undefined,
+        },
     });

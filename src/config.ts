@@ -8,6 +8,7 @@ nconf
         APP_NAME: 'RPGen',
         DEBUG: 'rpgen:*',
         LOG_LEVEL: 'debug',
+        MONGO_URI: 'mongodb://mongo/rpgen-server',
         PORT: '8082',
     })
     // .file({ file })
