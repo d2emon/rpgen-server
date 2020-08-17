@@ -1,22 +1,19 @@
 import {
   Router,
 } from 'express';
-import {
-  usersHandler,
-  registerHandler,
-  userHandler,
-  updateHandler,
+import userHandlers, {
   loginHandler,
   logoutHandler,
 } from '../handlers/users';
 
 const router = Router();
 
-router.get('/', usersHandler);
-router.post('/', registerHandler);
+router.get('/', userHandlers.listItems);
+router.post('/', userHandlers.addItem);
 
-router.get('/:id', userHandler);
-router.put('/:id', updateHandler);
+router.get('/:id', userHandlers.getItem);
+router.put('/:id', userHandlers.editItem);
+router.delete('/:id', userHandlers.delItem);
 
 router.post('/login', loginHandler);
 router.get('/logout', logoutHandler);

@@ -27,8 +27,6 @@ export interface IRole extends Document {
 }
 
 export interface IRoleModel extends Model<IRole> {
-    encryptPassword: (password: string) => string;
-    checkPassword: (password: string) => boolean;
 }
 
 

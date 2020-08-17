@@ -14,6 +14,7 @@ import logger from './log';
 
 import indexRouter from './routes';
 import encountersRouter from './encounters/routes';
+import rpgRouter from './routes/rpg';
 import usersRouter from './routes/users';
 // import mudRouter from './routes/mud';
 
@@ -42,15 +43,13 @@ app.use(morgan('dev'));
 app.use('/', indexRouter);
 app.use('/encounters', encountersRouter)
 app.use('/users', usersRouter);
+app.use('/rpg', rpgRouter);
 // app.use('/mud', mudRouter);
 // app.use('/api', apiRouter); // api
 // app.use('/api/world', worldApiRouter); // api
 // app.use('/api/npc', npcApiRouter); // api
-// app.use('', authRouter); // blueprints.auth
+
 // app.use('/admin', adminRouter); // admin
-// app.use('/rpg', rpgRouter); // blueprints.rpg
-// app.use('/campaign', campaignRouter); // blueprints.campaign
-// app.use('/session', sessionRouter); // blueprints.gamesession
 // app.use('/world', worldRouter); // blueprints.world
 
 // Adding commands from managers
