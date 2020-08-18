@@ -18,6 +18,7 @@ import npcRouter from './routes/npcs';
 import rpgRouter from './routes/rpg';
 import usersRouter from './routes/users';
 import worldsRouter from './routes/worlds';
+import clothingRouter from './routes/clothing';
 // import mudRouter from './routes/mud';
 
 const app =express();
@@ -48,6 +49,7 @@ app.use('/users', usersRouter);
 app.use('/rpg', rpgRouter);
 app.use('/api/npc', npcRouter);
 app.use('/api/world', worldsRouter);
+app.use('/clothing', clothingRouter);
 
 // app.use('/mud', mudRouter);
 // app.use('/api', apiRouter); // api

@@ -1,0 +1,1154 @@
+$name : My Personal Clothing Generator
+$author : HatedLove6
+$picture : http://i.imgur.com/y784uLO.png
+$description : This is my personal go-to clothing generator that randomly generates a variety of articles of clothing.  If you’ve stumbled upon this, you’ll probably not understand what the traits mean unless you’ve done as extensive note-taking as I have, and even then it might still be confusing, but if you can understand it, then go right ahead and use this as much as you would like.  This is just to get me started, and I can change whatever doesn't make sense (including clothing items that doesn't match the character's gender or personality).
+$amount : 1
+$button : Shop!
+
+$color
+deep red
+brick red
+bright red
+bright pink
+dusty pink
+light pink
+peach
+coral
+vibrant orange
+ginger
+terra cotta
+chocolate brown
+coffee brown
+earth brown
+gold
+amber
+golden yellow
+bright yellow
+light yellow
+chartreuse
+light green
+olive green
+lime
+dark green
+foliage green
+bright green
+emerald
+aqua
+turquoise
+teal
+sky blue
+light blue
+periwinkle
+bright blue
+deep blue
+lavender
+mauve
+amethyst
+blue purples
+red purple
+neutral grey
+charcoal grey
+taupe
+ivory
+silver
+black
+white
+
+$underwear
+bikini panties
+boxers
+bra
+briefs
+camisole
+chemise
+dressing gown
+knickers
+lingerie
+thong
+vest underwear
+
+$clothing pattern
+color [color]
+dots
+floral
+stripes
+animal print
+
+$bra type
+balcony
+padded
+plunge
+seamless
+strapless
+T-shirt
+underwire
+
+$length
+3/4
+full
+knee
+mini
+
+$chemise neckline
+boat
+scoop
+square
+swan
+sweetheart
+V-neck
+
+$chemise collar
+
+cape
+
+$chemise sleeves
+
+strappy
+
+$dressing gown sleeve length
+long
+short
+
+$dressing gown style
+tie-on
+wrap-around
+
+$dressing gown collar
+convertible
+shawl
+
+$sock type
+socks
+stockings
+
+$sock style
+crew
+liner
+double layer
+trainer
+
+$stocking type
+fishnet
+garter
+seamed
+
+$stocking style
+garter
+pantyhose
+
+$swimwear
+bikini
+sarong
+costume
+shorts
+tankini
+trunks
+
+$fit
+fitted
+padded
+
+$bikini style
+slip-on
+tie-string
+wrap around
+
+$bikini neckline
+halter
+square
+sweetheart
+
+$bikini straps
+bandeau
+strapless
+strappy
+
+$bottom style
+classic bikini
+hipster
+string
+high-waist
+shorts
+classic bikini with skirt
+hipster with skirt
+high-waist with skirt
+shorts with skirt
+
+$sarong style
+with ties
+without ties
+
+$swimming costume neckline
+halter
+square
+scoop
+V-neck
+
+$swimming costume straps
+straps
+strapless
+
+$tankini neckline
+scoop
+square
+V-neck
+
+$length
+3/4
+full
+knee
+mini
+
+$nightwear type
+nightgown
+pajamas
+shirt and shorts
+feetie/onsie
+underwear
+nudity
+
+$sleeve length
+long
+short
+sleeveless
+strappy
+
+$nightgown neckline
+scoop
+sweetheart
+V-neck
+
+$nightgown style
+slip-on
+wrap-around
+
+$pajama neckline
+scoop
+V
+
+$pajama style
+buttons
+drawstrings
+elasticated
+wrap-around
+
+$s+s style
+buttoned
+drawstring
+elasticated
+
+$footwear
+boots
+sandals
+shoes
+slippers [slipper type]
+trainers
+
+$boot type
+combat
+football
+hiking
+ugg
+wellington
+
+$boot toe
+cap
+closed
+
+$boot heel
+covered
+flat
+high
+platform
+small
+stilleto
+
+$boot height
+ankle
+knee
+thigh
+
+$boot style
+laced
+slip-on
+zip
+
+$boot pattern
+
+studs
+buckles
+
+$sandal type
+espadrille
+fisherman
+flip-flop
+
+$sandal heel
+flat
+high
+
+$sandal style
+buckled
+side
+slip-on
+velcro
+
+$shoe type
+ballerina flats
+clogs
+hiking
+loafer
+mary jane
+monkstrap
+two piece
+mules
+oxfords
+moccasins
+
+$shoe heel
+covered
+flat
+high
+platform
+small
+stilleto
+
+$shoe style
+laced
+slip-on
+velcro
+zip
+
+$shoe toe
+apron
+bicycle
+cap
+closed
+open
+peep
+plain
+pointed
+
+$shoe pattern
+slingback
+strappy
+T-strap
+brogue
+derby
+wingtip
+
+$slipper type
+ugg boots
+toe [slipper toe]
+full
+
+$slipper toe
+open
+closed
+
+$trainer heel
+flat
+platform
+
+$trainer style
+laced
+velcro
+
+$tops
+blouse
+cheongsam
+corset
+jumper
+kurta
+polo shirt
+shirt [shirt]
+sweatshirt
+T-shirt
+tunic
+turtleneck
+vest
+
+$blouse collar
+poet
+turnover
+
+$blouse sleeves
+bell
+cap
+puffed
+
+$blouse sleeve length
+long
+short
+
+$blouse style
+buttons
+wrap-around
+
+$blouse pattern
+plain [color]
+dots
+floral
+gathered
+pleats
+ruffle
+stripes
+
+$cheongsam sleeve length
+long
+3/4
+short
+sleeveless
+
+$cheongsam style
+center
+side
+
+$cheongsam pattern
+animal design
+color [color]
+floral
+pattern
+
+$jumper style
+slip-on
+wrap-around
+
+$jumper fit
+baggy
+fitted
+
+$jumper sleeves
+bell
+raglan
+set-in
+
+$jumper neckline
+off the shoulder
+one shoulder
+polo
+V-neck
+
+$shirt sleeve length
+long
+short
+
+$shirt style
+single cuffed
+double cuffed
+
+$shirt collar
+2 button
+2 button cut away
+2 button Italian
+2 button down
+3 button down
+British
+button down
+classic
+classic narrow
+convertible
+cut away
+hidden button
+St. Tropez
+turnover
+wingtip
+
+$shirt pattern
+plain [color]
+layered
+pleated
+striped
+
+$sweatshirt sleeves
+raglan
+set-in
+
+$sweatshirt neckline
+boat
+V-neck
+
+$tshirt type
+football
+rugby
+hockey
+tennis
+plain
+
+$tshirt length
+long
+short
+sleeveless
+
+$tshirt neckline
+V-neck
+scoop
+
+$tshirt pattern
+plain [color]
+dots
+floral
+logo
+stripes
+
+$tshirt fit
+fitted
+baggy
+
+$tunic sleeve length
+long
+short
+
+$tunic style
+button
+slip-on
+
+$tunic collar
+
+turnover
+
+$turtleneck
+turnover
+polo
+
+$vest style
+button
+elasticated
+tie-on
+hook and eye
+slip-on
+smocking
+wrap around
+combination
+
+$vest fit
+baggy
+fit
+
+$vest neckline
+boat
+cowl
+halter
+keyhole
+off the shoulder
+one shoulder
+scoop
+square
+sweetheart
+V-neck
+
+$vest collar
+
+poet
+convertible
+shawl
+
+$vest pattern
+plain [color]
+dots
+double breasted
+floral
+layered
+ruffled
+sequined
+single breasted
+gathered
+pleated
+stripes
+
+$jacket type 1
+blazer
+cardigan
+coat
+hoody
+jacket [jacket type 2]
+waterproof
+
+$blazer type
+uniform
+dinner jacket
+
+$blazer collar
+convertible
+shawl
+
+$blazer vents
+center
+sides
+multi
+
+$blazer pattern
+color
+stripes
+
+$cardigan style
+buttons
+slip-on
+tie-on/wrap
+
+$cardigan pattern
+color
+stripes
+
+$coat collar
+cape
+stand-up
+
+$coat style
+combination
+hook and eye
+zip
+
+$jacket type 2
+anorak
+harrington
+
+$jacket collar
+band
+stand-up
+turnover
+
+$jacket style
+buttons
+combination
+zip
+
+$bottoms
+cargos
+jeans
+kilt
+shorts
+skirts
+tights
+trousers
+
+$cargos style
+buttons
+combination
+drawstring
+zip
+
+$jeans legs
+bootcut
+flare
+skinny
+straight
+
+$jeans length
+3/4
+full
+
+$jeans fit
+baggy
+fitted
+
+$jeans style
+button
+combination
+zip
+
+$kilt style
+relaxed
+great
+fancy highland
+great winter
+fly plaid
+relaxed great back
+
+$shorts fabric
+cotton
+denim
+leather
+lycra
+polyester
+corduroy
+
+$short length
+cut-offs
+knee
+mini
+
+$short type
+athletic
+bermuda
+board shorts
+football
+hockey
+netball
+rugby
+swimming
+tennis
+walking
+
+$short style
+buttons
+combination
+drawstring
+elasticated
+zip
+
+$shorts pattern
+acid
+floral
+logo
+plain
+ripped
+worn
+
+$skirt shape
+A-line
+pencil
+circle
+straight
+
+$skirt length
+3/4
+full
+knee
+mini
+
+$skirt style
+buttons
+combination
+drawstring
+elasticated
+hook and eye
+tie-on/wrap
+wrap around
+zip
+
+$skirt pattern
+color
+floral
+dots
+stripes
+ruffled
+handkerchief hem
+layered
+pleated
+sequined
+gathered
+
+$trouser length
+3/4
+full
+
+$trouser leg
+boot cut
+skinny
+straight
+
+$trouser fit
+baggy
+fitted
+
+$trouser style
+buttons
+combination
+drawstring
+elasticated
+hook and eye
+zip
+
+$trouser pattern
+color
+floral
+ripped
+stripe
+worn
+
+$full body
+ball gown
+catsuit
+cheongsam
+dinner jacket
+dress
+dungarees
+jogging suit
+overalls
+robe
+romper
+shellsuit
+suit
+tailcoat
+tracksuit
+
+$ball gown sleeves
+strapless
+strappy
+sleeveless
+
+$ball gown neckline
+off the shoulder
+square
+sweetheart
+
+$ball gown pattern
+beaded
+gathered
+color [color]
+layered
+sequined
+backless
+beaded and backless
+gathered and backless
+layered and backless
+sequined and backless
+
+$cheongsam sleeve length
+long
+3/4
+short
+sleeveless
+
+$cheongsam style
+center
+side
+
+$cheongsam length
+full
+3/4
+knee
+mini
+
+$cheongsam pattern
+animal design
+color [color]
+floral
+pattern
+
+$dress type
+evening
+sundress
+
+$dress sleeve length
+short
+strapless
+long
+
+$dress sleeves
+bell
+cap
+puffed
+strappy
+sleeveless
+
+$dress neckline
+boat
+cowl
+halter
+off the shoulder
+one shoulder
+scoop
+square
+sweetheart
+V-neck
+
+$dress collar
+
+band
+poet
+
+$dress skirt type
+A-line
+circle
+pencil
+straight
+
+$dress length
+3/4
+full
+knee
+mini
+
+$dress style
+button
+elasticated
+tie-on/wrap
+wrap around
+zip
+
+$dress pattern
+handkerchief hem
+pleated
+beaded
+crinkle
+floral
+ruffled
+gathered
+layered
+color [color]
+sequined
+backless
+handkerchief hem and backless
+pleated and backless
+beaded and backless
+crinkled and backless
+floral and backless
+ruffled and backless
+gathered and backless
+layered and backless
+sequined and backless
+
+$tracksuit fit
+baggy
+fitted
+
+$accessories
+bag [bag type]
+belt
+cufflinks
+cummerbund
+hair accessory
+hat
+jewellery
+kaftan
+pashmina
+gloves
+neckwear
+poncho
+scarf
+shawl
+sunglasses
+
+$bag type
+backpack
+bucket
+clutch
+duffel
+evening
+satchel
+tote
+drawstring
+
+$bag style
+buttons
+drawstring
+buckle
+magnet
+zip
+
+$bag pattern
+beaded
+color
+dot
+floral
+logo
+sequined
+striped
+
+$belt type
+tie-on
+buckle
+
+$belt pattern
+color
+dots
+floral
+stripes
+studs
+
+$glove fabric
+leather
+lycra
+polyester
+satin
+suede
+wool
+lace
+
+$glove length
+long
+medium
+short
+
+$glove fingers
+fingers
+knuckles
+fingerless
+
+$glove pattern
+color
+floral
+ribbon
+stripe
+
+
+$hat type
+bandana
+beanie [beanie type]
+beret [beret type]
+bonnet
+bowler [bowler type]
+bucket
+cowboy [cowboy hat type]
+cap [cap type]
+cloche
+fedora [fedora type]
+top hat
+trapper
+
+$beanie type
+skull cap
+cuffed
+earflap
+visor
+ski mask
+animal
+
+$beret type
+official
+wool knit
+children
+
+$bowler type
+original
+cat ears
+
+$cap type
+baseball
+flat
+
+$cowboy hat type
+cattleman
+cutter
+ridge top
+dakota
+mountie
+gus
+pinchfront
+boss of the plains
+telescope
+
+$fedora type
+classic
+safari
+pork pie
+trilby
+
+$hat pattern
+color
+floral
+stripes
+feathers
+
+$jewelry material
+gold
+plastic
+silver
+wooden
+bone
+
+$jewelry type
+anklet
+bracelet
+choker
+necklace
+rings
+piercing [pierced body part]
+
+$pierced body part
+abdomen
+cheek
+chest
+ears
+groin
+mouth
+nose
+
+$neckwear
+ascot
+bolo
+bow tie
+cravat
+scarf
+skinny tie
+tie
+tulip tie
+neck tab
+
+$tie knots
+four in hand
+half windsor
+full windsor
+nicky
+kelvin
+oriental
+pratt
+St. Andrew
+balthus
+hanover
+plattsburgh
+grantchester
+victoria
+cafe
+eldredge
+trinity
+christensen
+
+$scarf fabric
+cotton
+fur
+satin
+silk
+wool
+
+$scarf pattern
+color
+floral
+striped
+
+$scarf knots
+halter top
+half bow epaulette
+fancy braid
+scarf boa
+carmen miranda
+wrap and tie
+rosette scarf belt
+shoulder duster
+double scarf loop knot
+scarf bustier
+twisty scarf loop
+cowboy bolo tie
+infinity scarf twist
+boho loop tie
+girly windsor
+bisous bow tie
+belted scarf
+skinny scarf necklace
+ascot wrap
+knot row
+double scarf boho tie
+slip knot
+rosette neck wrap
+hollywood hills
+DIY circle scarf
+layered knot
+simple tie
+chain knot
+neck tie knot
+double knot wrap
+muffler II
+square knot
+scarf belt
+double loop
+four in hand
+knotted scarf
+neck wrap
+fake knot
+double wrap french knot
+bow tie
+half bow
+infinity loop knot
+half bow II
+loop and tuck scarf
+infinity scarf shrug
+pan am
+loose wrap
+muffler
+double wrap neck
+cape wrap
+
+$phrase
+<h1>CLOTHING:</h1><b>Underwear:</b><br>The underwear is [underwear].  <br>If a bra is chosen, it is a [bra type] bra.  <br>If chemise is chosen, it's [length] length with [chemise neckline] neckline and [chemise collar] collar.  <br>If dressing gown is chosen, it's [length] length with [dressing gown sleeve length] length sleeves that's [dressing gown style] and has [dressing gown collar] collar.  <br>Their favorite decorative pattern is [color] with [clothing pattern].<br><br><b>Socks:</b><br>The socks are [sock type].  <br>If socks are chosen, they are [sock style].  <br>If stockings are chosen, it's [stocking type] [stocking style].  <br>Whatever it is, it's primarily [color] with [clothing pattern].<br><br><b>Swimwear:</b><br>The swimwear is [swimwear].  <br>If bikini is chosen, it's a [fit] bikini, that is a [bikini style] with a [bikini neckline] neckline and is [bikini straps].  The bikini bottoms are [bottom style].  <br>If sarong is chosen, it's [sarong style].  <br>If swimming costume is chosen, its [fit] with a [swimming costume neckline] neckline and is/has [swimming costume straps].  <br>If tankini is chosen, it has a [tankini neckline] neckline, and has [bottom style] bottoms.  <br>In any case, it's [color] with a [clothing pattern] pattern.<br><br><b>Nightwear:</b><br>The nightwear is [nightwear type].  <br>If nudity is chosen, then don't read any farther.  <br>If underwear is chosen, look into the underwear section, and don't read any farther.  <br>If nightgown is chosen, it's a [nightgown style] nightgown with a [nightgown neckline] neckline, and [sleeve length] sleeves.  <br>If pajamas is chosen, it's [pajama style], and has a [pajama neckline] neckline.  <br>If shirt and shorts are chosen, then the shirt or shorts are [s+s style].  <br>Whatever it is, it's primarily [color], with a[n] [clothing pattern] pattern.<br><br><b>Footwear:</b><br>The footwear are [footwear].  <br>If boots are chosen, they're [boot height] height [boot type] boots that are [boot style] with [boot toe] toe, [boot heel] heel, and has [boot pattern].  <br>If sandals are chosen, they are [sandal type] sandals with [sandal heel] heel and is [sandal style].  <br>If shoes are chosen, they are [shoe style] [shoe type], with [shoe heel] heel (unless they are flats or are a shoe with a flat heel), [shoe toe] toe, and has a [shoe pattern], unless they are flats or clogs.  <br>If trainers are chosen, they are [trainer style] shoes with a [trainer heel] heel.  <br>In any case, they are primarily [color] in color.<br><br><b>Tops:</b><br>The top is [tops].  <br>If blouse was chosen, it is a [blouse style] blouse with a [blouse collar] collar and [blouse sleeve length] [blouse sleeves] sleeves with [blouse pattern].  <br>If cheongsam is chosen, it's a [cheongsam sleeve length] sleeved shirt with the fastenings on the [cheongsam style] side, and has a [cheongsam pattern] pattern.  <br>If jumper was chosen, it's a [jumper fit] [jumper style] with a [jumper neckline] neckline and [jumper sleeves] sleeves.  <br>If shirt was chosen, it's [shirt style], with [shirt sleeve length] sleeves, [shirt collar] collar, and is [shirt pattern].  <br>If sweatshirt was chosen, it has a [sweatshirt neckline] neckline with [sweatshirt sleeves] sleeves.  <br>If T-shirt was chosen, it's a [tshirt fit] [tshirt type] shirt with [tshirt neckline] neckline.  <br>If tunic was chosen, it's [tunic style], with [tunic sleeve length] sleeves, and [tunic collar] collar.  <br>If turtleneck is chosen, it has [turtleneck] collar.  <br>If vest was chosen, it's [vest fit] [vest style] with [vest neckline] neckline and a [vest collar] collar, and is [vest pattern].  <br>Whatever it is, it's primarily [color].<br><br><b>Jackets:</b><br>The jacket is [jacket type 1].  <br>If blazer is chosen, it is a [blazer type] with a [blazer collar] collar, [blazer vents], and is in a [blazer pattern] pattern.  <br>If cardigan is chosen, it is a [cardigan style] with [cardigan pattern].  <br>If coat was chosen, it's a [coat style] with a [coat collar] collar.  <br>If jacket was chosen, it's a [jacket style] jacket with a [jacket collar] collar.  <br>It's primarily a [color].<br><br><b>Bottoms:</b><br>The bottoms are [bottoms].  <br>If cargos were chosen, it's [cargos style].  <br>If jeans were chosen, it's [jeans fit] [jeans length] [jeans legs] that's [jeans style].  <br>If kilt is chosen, you're character's favorite way to wear it is in the [kilt style] style.  <br>If shorts were chosen, they are [short style] [short type] [short length] shorts with [shorts pattern] pattern.  <br>If skirt was chosen, it is a [skirt style] [skirt length] [skirt shape] skirt that's [skirt pattern].  <br>If trousers were chosen, it's [trouser fit] [trouser length] [trouser leg] trousers that's [trouser style] and is/has [trouser pattern].  <br>Whatever it is, it's primarily [color].<br><br><b>Full Body Outfits:</b><br>The full body outfit is a [full body].  <br>If ball gown was chosen, it is a [ball gown sleeves] [ball gown neckline] neck dress that's [ball gown pattern].  <br>If cheongsam is chosen, it's a [cheongsam length] length dress, [cheongsam sleeve length] sleeves with the fastenings on the [cheongsam style] and has a [cheongsam pattern] pattern.  <br>If dress is chosen, it is a[n] [dress style] [dress type] dress with [dress sleeve length] [dress sleeves] sleeves, a [dress neckline] neckline, with a [dress collar] collar, and a[n] [dress length] [dress skirt type] skirt that is/has a[n] [dress pattern].  <br>If tracksuit was chosen, it's [tracksuit fit].  <br>Whatever it is, it's primarily [color]<br><br><b>Accessories:</b><br>The accessory is a [accessories].  <br>If bag is chosen, it is a [bag type] with [bag style] fastenings, and is/has a[n] [bag pattern].  <br>If belt is chosen, it is a [belt type] type that's [belt pattern].  <br>If gloves were chosen, they're [glove length] [glove fingers] that's [glove pattern].  <br>If hat was chosen, it's a [hat type] that's [hat pattern].  <br>If jewelry is chosen, it's a [jewelry material] [jewelry type].  <br>If neckwear is chosen, it's [neckwear].  <br>If a tie or skinny tie was chosen, it's usually in a [tie knots] knot.  <br>If scarf was chosen, it's [scarf pattern] in a [scarf knots] knot.  <br>Whatever it is, it's [color].<br><br><br><br>
