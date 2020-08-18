@@ -14,8 +14,10 @@ import logger from './log';
 
 import indexRouter from './routes';
 import encountersRouter from './encounters/routes';
+import npcRouter from './routes/npcs';
 import rpgRouter from './routes/rpg';
 import usersRouter from './routes/users';
+import worldsRouter from './routes/worlds';
 // import mudRouter from './routes/mud';
 
 const app =express();
@@ -44,11 +46,11 @@ app.use('/', indexRouter);
 app.use('/encounters', encountersRouter)
 app.use('/users', usersRouter);
 app.use('/rpg', rpgRouter);
+app.use('/api/npc', npcRouter);
+app.use('/api/world', worldsRouter);
+
 // app.use('/mud', mudRouter);
 // app.use('/api', apiRouter); // api
-// app.use('/api/world', worldApiRouter); // api
-// app.use('/api/npc', npcApiRouter); // api
-
 // app.use('/admin', adminRouter); // admin
 // app.use('/world', worldRouter); // blueprints.world
 
