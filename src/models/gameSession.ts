@@ -1,10 +1,9 @@
 import  {
-    Document,
     Model,
     Schema,
     model,
 } from 'mongoose';
-import {ICampaign} from "./campaign";
+import { IGameSession } from './types';
 
 const schema: Schema = new Schema({
     title: {
@@ -14,31 +13,34 @@ const schema: Schema = new Schema({
     description: {
         type: String,
     },
-    campaign: {
-        type: Schema.Types.ObjectId,
-        ref: 'Campaign',
-    },
     realDate: {
         type: Date,
         default: Date.now(),
     },
+    campaignDate: Date,
+    campaignDateText: String,
+    xp: Number,
+    characters: [String],
+});
+
+schema.virtual('campaigns', {
+    ref: 'Campaign',
+    localField: '_id',
+    foreignField: 'sessions',
 });
 
 schema.set('toJSON', {
-    transform: doc => ({
+    transform: (doc) => ({
         id: doc.id,
         title: doc.title,
-        campaign: doc.campaign,
+        // campaign: doc.campaign,
         realDate: doc.realDate,
+        campaignDate: doc.campaignDate,
+        campaignDateText: doc.campaignDateText,
+        xp: doc.xp,
+        characters: doc.characters,
     }),
 })
-
-export interface IGameSession extends Document {
-    title: string;
-    description: string;
-    campaign: ICampaign;
-    realDate: Date;
-}
 
 export interface IGameSessionModel extends Model<IGameSession> {
 }

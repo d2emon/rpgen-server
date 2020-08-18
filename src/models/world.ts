@@ -4,7 +4,7 @@ import  {
     Schema,
     model,
 } from 'mongoose';
-import {ICampaign} from "./campaign";
+import { ICampaign } from './types';
 
 const schema: Schema = new Schema({
     title: {

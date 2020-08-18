@@ -7,7 +7,15 @@ import {
     responseError,
 } from '../errorHandlers';
 import GameSession from '../models/gameSession';
-import Campaign from "../models/campaign";
+import Campaign from '../models/campaign';
+
+const findCampaign = async (slug: string) => {
+    const campaign = await Campaign.bySlug(slug).populate('sessions');
+    if (!campaign) {
+        throw new HttpException(404, 'Campaign not found');
+    }
+    return campaign;
+};
 
 const listItems = async (req: Request, res: Response) => {
     try {
@@ -20,13 +28,11 @@ const listItems = async (req: Request, res: Response) => {
 
 const addItem = async (req: Request, res: Response) => {
     try {
-        const campaign = await Campaign.findById(req.params.campaignId);
-        if (!campaign) {
-            return responseError(res, new HttpException(404, 'Campaign not found'));
-        }
+        const campaign = await findCampaign(req.params.campaignId);
         const session = new GameSession(req.body);
-        session.campaign = campaign.id;
         await session.save();
+        campaign.sessions.push(session);
+        await campaign.save();
         return res.json({ session });
     } catch (error) {
         return responseError(res, error);
@@ -35,11 +41,18 @@ const addItem = async (req: Request, res: Response) => {
 
 const getItem = async (req: Request, res: Response) => {
     try {
-        const session = await GameSession.findById(req.params.sessionId);
+        const session = await GameSession
+            .findById(req.params.sessionId)
+            .populate('campaigns');
         if (!session) {
             return responseError(res, new HttpException(404, 'Session not found'));
         }
-        return res.json({ session });
+        return res.json({
+            session: {
+                ...session.toJSON(),
+                campaigns: session.campaigns,
+            },
+        });
     } catch (error) {
         return responseError(res, error);
     }
@@ -47,12 +60,7 @@ const getItem = async (req: Request, res: Response) => {
 
 const editItem = async (req: Request, res: Response) => {
     try {
-        const session = await GameSession.findById(req.params.sessionId);
-        if (!session) {
-            return responseError(res, new HttpException(404, 'Session not found'));
-        }
-        session.overwrite(req.body);
-        await session.save();
+        const session = await GameSession.findByIdAndUpdate(req.params.sessionId, req.body);
         return res.json({ session });
     } catch (error) {
         return responseError(res, error);
