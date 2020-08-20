@@ -1,0 +1,70 @@
+import {
+    RacialTrait,
+    onApply,
+} from '../race/traits';
+
+const names: { [id: string]: string } = {
+    AGILE: 'Agile',
+    ALL_THUMBS: 'All thumbs',
+    AQUATIC: 'Aquatic',
+    BLOODTHIRSTY: 'Bloodthirsty',
+    BONUS_EDGE: 'Bonus Edge',
+    CARAPACE: 'Carapace',
+    CLAWS: 'Claws',
+    FLIGHT: 'Flight',
+    HERITAGE: 'Heritage',
+    INFRAVISION: 'Infravision',
+    LEAPING: 'Leaping',
+    LOW_LIGHT_VISION: 'Low light vision',
+    LUCK: 'Luck',
+    NATURAL_SWIMMER: 'Natural swimmer',
+    NATURAL_WEAPON: 'Natural weapon',
+    NO_HARD_ROUTE: 'Outsider',
+    OUTSIDER: 'Outsider',
+    POUNCE: 'Pounce',
+    SAURIAN_SENSES: 'Saurian senses',
+    SLOW: 'Slow',
+    SMALL: 'Small',
+    SPIRITED: 'Spirited',
+    STRONG: 'Strong',
+    TOUGH: 'Tough',
+};
+
+const TRAITS: RacialTrait[] = [
+    'AGILE',
+    'ALL_THUMBS',
+    'AQUATIC',
+    'BLOODTHIRSTY',
+    'BONUS_EDGE',
+    'CARAPACE',
+    'CLAWS',
+    'FLIGHT',
+    'HERITAGE',
+    'INFRAVISION',
+    'LEAPING',
+    'LOW_LIGHT_VISION',
+    'LUCK',
+    'NATURAL_SWIMMER',
+    'NATURAL_WEAPON',
+    'NO_HARD_ROUTE',
+    'OUTSIDER',
+    'POUNCE',
+    'SAURIAN_SENSES',
+    'SLOW',
+    'SMALL',
+    'SPIRITED',
+    'STRONG',
+    'TOUGH',
+].map(traitId => ({
+    traitId,
+    name: (names[traitId] || traitId),
+    onApply: (onApply[traitId] || (() => null)),
+}));
+
+export default TRAITS.reduce(
+    (items: { [id: string]: RacialTrait }, item: RacialTrait) => ({
+        ...items,
+        [item.traitId]: item,
+    }),
+    {},
+);
