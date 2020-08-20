@@ -1,3 +1,30 @@
+export interface Skilled {
+    boat(options: {}): boolean;
+    climb(options: {}): boolean;
+    drive(options: {}): boolean;
+    fight(options: {}): boolean;
+    gamble(options: {}): boolean;
+    guts(options: {}): boolean;
+    heal(options: {}): boolean;
+    intimidate(options: {}): boolean;
+    investigate(options: {}): boolean;
+    know(options: {}): boolean;
+    lockpick(options: {}): boolean;
+    notice(options: {}): boolean;
+    persuade(options: {}): boolean;
+    pilot(options: {}): boolean;
+    repair(options: {}): boolean;
+    ride(options: {}): boolean;
+    shoot(options: {}): boolean;
+    stealth(options: {}): boolean;
+    streetwise(options: {}): boolean;
+    survive(options: {}): boolean;
+    swim(options: {}): boolean;
+    taunt(options: {}): boolean;
+    throw(options: {}): boolean;
+    track(options: {}): boolean;
+}
+
 export interface NeedSpend {
     environment: string;
     period: number;
