@@ -1,4 +1,4 @@
-var models = require('../index')
+var models = require('../generators')
 var getAlien = require('./alien-type')
 var getInvertebrate = require('./type-invertebrate')
 var getFish = require('./type-fish')
@@ -9,10 +9,10 @@ var getMammal = require('./type-mammal')
 var getAquatic = require('./type-aquatic')
 
 
-var names3 = require('../../../data/alien-eyes-count.json')
-var names4 = require('../../../data/alien-eyes-sit.json')
-var names5 = require('../../../data/alien-eyes-sight.json')
-var names6 = require('../../../data/alien-eyes-see.json')
+var names3 = require('../../../../data/alien-eyes-count.json')
+var names4 = require('../../../../data/alien-eyes-sit.json')
+var names5 = require('../../../../data/alien-eyes-sight.json')
+var names6 = require('../../../../data/alien-eyes-see.json')
 
 var names10 = ["very thick and rough.","smooth and thin.","thin, but strong.","thin and fairly weak.","very thick and very strong.","very strong, but not very thick.","course, thick and strong.","smooth, yet strong.","smooth, elastic and quite strong.","elastic and strong."];
 var names11 = ["It's covered in thick fur.","It's covered lightly in small hairs.","It's covered lightly in long, coarse hairs.","It's covered in thick, course fur.","It's covered long, wavy hairs.","It's covered short hairs.","It's covered short, curly hairs.","It's covered in nothing but a few hairs on their hands.","It's covered in nothing but hair on their heads, arms and legs.","It's covered in nothing, except for hair on their heads.","It's covered in nothing, except for hairs on their heads, chests, arms and legs.","It's covered in nothing but a few hairs on their heads.","It's covered lightly in tiny hairs.","It's covered in thick, short hairs.","It's covered in soft, short hairs."];

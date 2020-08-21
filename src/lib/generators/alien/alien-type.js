@@ -22,17 +22,17 @@ function num2str (num) {
 function getAlien () {
   return {
     title: '',
-    arms: require('../../../data/alien/default-arms.json'),
-    legs: require('../../../data/alien/default-legs.json'),
-    tails: require('../../../data/alien/default-tails.json'),
+    arms: require('../../../../data/alien/default-arms.json'),
+    legs: require('../../../../data/alien/default-legs.json'),
+    tails: require('../../../../data/alien/default-tails.json'),
 
-    names2a: require('../../../data/alien-mammal-parts-1.json'),
-    names2b: require('../../../data/alien-mammal-parts-2.json'),
-    names2c: require('../../../data/alien-mammal-parts-3.json'),
-    names7a: require('../../../data/alien-mammal-mouths.json'),
-    names7b: require('../../../data/alien-mammal-noses.json'),
-    names8: require('../../../data/alien-mammal-ears.json'),
-    names9: require('../../../data/alien-mammal-horns.json'),
+    names2a: require('../../../../data/alien-mammal-parts-1.json'),
+    names2b: require('../../../../data/alien-mammal-parts-2.json'),
+    names2c: require('../../../../data/alien-mammal-parts-3.json'),
+    names7a: require('../../../../data/alien-mammal-mouths.json'),
+    names7b: require('../../../../data/alien-mammal-noses.json'),
+    names8: require('../../../../data/alien-mammal-ears.json'),
+    names9: require('../../../../data/alien-mammal-horns.json'),
     names11: names11,
     names11a: "Их кожа ",
 

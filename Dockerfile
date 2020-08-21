@@ -7,6 +7,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY ts*.json ./
+COPY data ./data
 COPY public ./public
 COPY src ./src
 

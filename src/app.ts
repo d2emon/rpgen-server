@@ -14,6 +14,7 @@ import logger from './log';
 
 import indexRouter from './routes';
 import encountersRouter from './encounters/routes';
+import generatorsRouter from './routes/generators';
 import npcRouter from './routes/npcs';
 import rpgRouter from './routes/rpg';
 import usersRouter from './routes/users';
@@ -43,7 +44,8 @@ app.use(morgan('dev'));
 
 // Routes setup
 app.use('/', indexRouter);
-app.use('/encounters', encountersRouter)
+app.use('/encounters', encountersRouter);
+app.use('/generator', generatorsRouter);
 app.use('/users', usersRouter);
 app.use('/rpg', rpgRouter);
 app.use('/api/npc', npcRouter);
