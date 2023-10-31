@@ -13,6 +13,7 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node ./dist",
+    "start:js": "node ./src-js",
     "debug": "node --debug-brk src/app.ts",
     "dev": "supervisor src/app.ts",
     "serve": "nodemon --watch src -e ts,ejs --exec npm run start",
@@ -29,6 +30,7 @@
     "url": "https://github.com/d2emon/rpgen-server/issues"
   },
   "dependencies": {
+    "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
     "express": "^4.17.1",
