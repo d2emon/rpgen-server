@@ -18,6 +18,7 @@ const {
 const indexRouter = require('./routes');
 // import encountersRouter from './encounters/routes';
 // import generatorsRouter from './routes/generators';
+const nestedRouter = require('./routes/nested');
 // import npcRouter from './routes/npcs';
 const routesRouter = require('./routes/routes');
 // import rpgRouter from './routes/rpg';
@@ -52,6 +53,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 // app.use('/encounters', encountersRouter);
 // app.use('/generator', generatorsRouter);
+app.use('/api/v1.1/nested', nestedRouter);
 app.use('/api/v1.1/routes', routesRouter);
 app.use('/users', usersRouter);
 // app.use('/rpg', rpgRouter);

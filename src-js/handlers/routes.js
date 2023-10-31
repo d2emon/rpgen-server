@@ -1,5 +1,3 @@
-const express = require('express');
-
 async function routesHandler (req, res) {
   const random = req.query.random
 
