@@ -14,6 +14,7 @@
     "prestart": "npm run build",
     "start": "node ./dist",
     "start:js": "node ./src-js",
+    "start:js:watch": "nodemon --watch ./src-js --exec npm run start:js",
     "debug": "node --debug-brk src/app.ts",
     "dev": "supervisor src/app.ts",
     "serve": "nodemon --watch src -e ts,ejs --exec npm run start",
