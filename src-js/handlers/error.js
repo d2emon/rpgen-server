@@ -1,5 +1,3 @@
-const express = require('express');
-
 function HttpException (status, message) {
   const error = new Error(message);
   error.status = status;
